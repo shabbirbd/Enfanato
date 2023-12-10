@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'main-pattern': "url('./src/assets/mainbg2.png')",
+      },
+      colors: {
+        'enfanato' : "#FAB6B6"
+      }
+    },
   },
   plugins: [],
 }
