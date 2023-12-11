@@ -10,7 +10,8 @@ export default {
         'main-pattern': "url('./src/assets/mainbg2.png')",
       },
       colors: {
-        'enfanato' : "#FAB6B6"
+        'enfanato' : "#FAB6B6",
+        'elemental' : "#7461B0"
       }
     },
   },

@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <div className=" bg-main-pattern min-h-screen -z-50 bg-[length:200px_200px] bg-repeat">
+      <div className=" bg-main-pattern  min-h-screen bg-[length:250px_250px] -z-50 bg-repeat">
         <div className="w-full lg:w-4/5 mx-auto shadow-2xl shadow-enfanato">
           <Topbar/>
           <Navbar/>
