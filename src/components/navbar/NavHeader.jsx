@@ -12,10 +12,10 @@ import enfanato from '../../assets/enfanato.png';
 
 const NavHeader = () => {
     return (
-        <div className='bg-[#F9F5F5] relative -translate-y-7 border-2 border-green-300'>
+        <div className='bg-[#F9F5F5] relative -translate-y-7 z-40 '>
             <div className='md:py-7 pt-5 w-full flex items-center justify-between px-5 z-10'>
                 <div className='outline-dashed outline-1 outline-red-600 bg-white max-w-xs w-full  py-3 px-3  items-center justify-between hidden lg:flex'>
-                    <input type="text" className='font-base text-sm leading-3' placeholder='Search out catalogue'/>
+                    <input type="text" className='font-base text-sm leading-3 focus:outline-none' placeholder='Search our catalogue'/>
                     <GoSearch className='cursor-pointer'/>
                 </div>
                 
@@ -27,7 +27,7 @@ const NavHeader = () => {
 
 
 
-                <div className='max-w-xs w-full border-green-600 border-2 flex items-center justify-end space-x-3 lg:space-x-5 text-neutral-500'>
+                <div className='max-w-xs w-full flex items-center justify-end space-x-3 lg:space-x-5 text-neutral-500'>
                     <div className='hover:text-elemental duration-300 block lg:hidden'>
                         <FaSearch className='cursor-pointer font-bold text-2xl'/>
                     </div>
