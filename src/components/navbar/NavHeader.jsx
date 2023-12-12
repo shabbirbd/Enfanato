@@ -9,7 +9,7 @@ import enfanato from '../../assets/enfanato.png';
 const NavHeader = ({setOpen}) => {
 
     return (
-        <div className='bg-[#F9F5F5] relative -translate-y-7 z-40 lg:py-0'>
+        <div className='bg-[#F9F5F5] relative z-40 lg:py-0'>
             <div className='md:py-7 pt-5 w-full flex items-center justify-between px-5 z-10'>
                 <div className='outline-dashed outline-1 outline-red-600 bg-white max-w-xs w-full  py-3 px-3  items-center justify-between hidden lg:flex'>
                     <input type="text" className='font-base text-sm leading-3 focus:outline-none' placeholder='Search our catalogue'/>
