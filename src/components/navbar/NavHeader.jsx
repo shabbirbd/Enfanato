@@ -6,11 +6,8 @@ import enfanato from '../../assets/enfanato.png';
 
 
 
+const NavHeader = ({setOpen}) => {
 
-
-
-
-const NavHeader = () => {
     return (
         <div className='bg-[#F9F5F5] relative -translate-y-7 z-40 lg:py-0'>
             <div className='md:py-7 pt-5 w-full flex items-center justify-between px-5 z-10'>
@@ -50,8 +47,10 @@ const NavHeader = () => {
                         <p className='text-sm hidden lg:block'>Cart</p>
                     </div>
 
-                    <div className='flex flex-col items-center cursor-pointer duration-300 hover:text-elemental lg:hidden'>
-                        <FaThList className='cursor-pointer font-bold text-2xl' />
+                    <div className='flex flex-col items-center duration-300 hover:text-elemental lg:hidden'>
+                        <button onClick={()=>setOpen(true)}>
+                            <FaThList className='cursor-pointer font-bold text-2xl' />
+                        </button>
                     </div>
                 </div>
             </div>
