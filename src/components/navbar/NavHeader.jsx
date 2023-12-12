@@ -12,7 +12,7 @@ import enfanato from '../../assets/enfanato.png';
 
 const NavHeader = () => {
     return (
-        <div className='bg-[#F9F5F5] relative -translate-y-7 z-40 '>
+        <div className='bg-[#F9F5F5] relative -translate-y-7 z-40 lg:py-0'>
             <div className='md:py-7 pt-5 w-full flex items-center justify-between px-5 z-10'>
                 <div className='outline-dashed outline-1 outline-red-600 bg-white max-w-xs w-full  py-3 px-3  items-center justify-between hidden lg:flex'>
                     <input type="text" className='font-base text-sm leading-3 focus:outline-none' placeholder='Search our catalogue'/>
@@ -56,7 +56,7 @@ const NavHeader = () => {
                 </div>
             </div>
 
-            <div className='relative lg:bottom-7 md:bottom-8 bottom-4'>
+            <div className='relative lg:bottom-7 md:bottom-8 bottom-4 hidden lg:block'>
             <svg width="100%" height="100%" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" overflow="auto" shapeRendering="auto" fill="#F9F5F5" className='transform rotate-180 absolute  -z-10 md:h-16 h-12 '>
                 <defs>
                 <path id="wavepath" d="M 0 2000 0 500 Q 19 274 38 500 t 38 0 38 0 38 0 38 0 38 0 38 0 38 0 38 0 38 0 38 0 38 0 38 0 38 0 38 0 38 0 38 0 38 0 38 0 38 0 38 0 38 0 38 0 38 0 38 0 38 0 38 0 38 0 38 0  v1000 z" />
