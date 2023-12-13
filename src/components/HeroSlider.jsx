@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import iconrobot from '../assets/iconrobot.png';
-import iconspinner from '../assets/iconspinner.png';
-import iconteddy from '../assets/iconteddy.png';
+import plane from '../assets/plane.png';
+import spinner from '../assets/spinner.png';
+import teddy from '../assets/teddy.png';
  
 
 
 const HeroSlider = () => {
-        const texts = ["Wooden planes", "Colorful Spinners", "Beautifyl Teddys"];
-        const images = [iconspinner, iconteddy, iconrobot]
+        const texts = [ "Colorfull Fidget Spinners", "Teddy Bear Selection", "Wooden Planes"];
+        const images = [spinner, teddy, plane,]
         const [translate, setTranslate] = useState(0)
 
         const nextText = ()=>{
@@ -27,34 +27,41 @@ const HeroSlider = () => {
             }
         }
 
+        useEffect(()=>{
+            clearTimeout();
+            setTimeout(() => {
+                nextText()
+            }, 5000);
+        }, [translate])
+
 
     return (
-        <div className='border-2 border-green-600 xl:h-[650px] lg:h-[550px] md:h-[450px] h-[350px] bg-white m-3 relative '>
-                <div className='w-full h-full flex items-center justify-between px-5 absolute z-50'>
-                    <button className='h-16 w-16 border border-neutral-300 rounded-full flex items-center justify-center' onClick={()=>prevText()}>
+        <div className='bg-enfanato/20 rounded-xl xl:h-[550px] lg:h-[450px] md:h-[350px] h-[350px] bg-white m-3 relative '>
+                <div className='w-full h-full flex items-center justify-between px-2 absolute z-50'>
+                    <button className='lg:h-16 md:h-12 h-10 lg:w-16 md:w-12 w-10 border border-neutral-300 rounded-full flex items-center justify-center bg-white' onClick={()=>prevText()}>
                         <FaArrowLeft />
                     </button>
-                    <button className='h-16 w-16 border border-neutral-300 rounded-full flex items-center justify-center' onClick={()=> nextText()}>
+                    <button className='lg:h-16 md:h-12 h-10 lg:w-16 md:w-12 w-10 border border-neutral-300 rounded-full flex items-center justify-center bg-white' onClick={()=> nextText()}>
                         <FaArrowRight />
                     </button>
                 </div>
 
-                <div className='absolute border-2 h-full grid grid-cols-2 border-red-500 w-full'>
-                    <div className='overflow-hidden relative flex flex-col  border-2 border-violet-600 w-full'>
+                <div className='absolute h-full grid grid-cols-2 w-full'>
+                    <div className='overflow-hidden relative flex flex-col  w-full h-full'>
                         {
-                            texts.map((item, i)=>(
-                                <div className={`min-h-full h-full -translate-y-[${translate}%] duration-500 flex items-center justify-center `} key={i} >
-                                    <h2 >{item} {i} {translate}</h2>
+                            texts?.map((item, i)=>(
+                                <div className={`min-h-full h-full  -translate-y-[${translate}%] duration-1000 flex flex-col items-end justify-center px-16`} key={i} >
+                                    <h2 className='translate-x-5 lg:text-8xl md:text-6xl text-4xl leading-snug text-elemental font-bold'>{item}</h2>
                                 </div>
                             ))
                         }
                     </div>
 
-                    <div className='border-2 border-sky-500 overflow-hidden relative flex items-center justify-center w-full'>
+                    <div className='relative flex items-center justify-center w-full'>
                         {
-                            images.map((item, i)=>(
-                                <div key={i} className={`${translate === i* 100 ? "opacity-100" : "opacity-0"} flex items-center justify-center transition-all ease-in-out absolute h-full duration-1000  p-5`}>
-                                    <img src={item} alt="img" className='border-2 h-full border-red-700 '/>
+                            images?.map((item, i)=>(
+                                <div key={i} className={`${translate === i* 100 ? "opacity-100" : "opacity-0"} flex items-center justify-center transition-all ease-in-out absolute h-full duration-1000 p-5 `}>
+                                    <img src={item} alt="img" className='w-full object-cover'/>
                                 </div>
                             ))
                         }
