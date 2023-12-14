@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import plane from '../assets/plane.png';
 import spinner from '../assets/spinner.png';
@@ -11,6 +11,7 @@ const HeroSlider = () => {
         const texts = [ "Colorfull Fidget Spinners", "Teddy Bear Selection", "Wooden Planes"];
         const images = [spinner, teddy, plane,]
         const [index, setIndex] = useState(0)
+        const intervalRef = useRef();
 
         const nextText = useCallback(() => {
             setIndex((index + 1) % texts.length);
@@ -22,15 +23,14 @@ const HeroSlider = () => {
             console.log(index)
         }, [index, texts]);
 
+
         useEffect(()=>{
-            const timeOut = ()=>{
-                setTimeout(() => {
-                    nextText()
-                    console.log("here")
-                }, 10000);
-            };
-            return ()=>clearTimeout(timeOut)
-        },[index])
+            intervalRef.current = setInterval(() => {
+              nextText();
+              console.log("here")
+            }, 3000);
+            return () => clearInterval(intervalRef.current); 
+          },[index, nextText]);
 
 
     return (
