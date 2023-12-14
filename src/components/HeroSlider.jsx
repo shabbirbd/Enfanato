@@ -1,42 +1,40 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import plane from '../assets/plane.png';
 import spinner from '../assets/spinner.png';
 import teddy from '../assets/teddy.png';
+
  
 
 
 const HeroSlider = () => {
         const texts = [ "Colorfull Fidget Spinners", "Teddy Bear Selection", "Wooden Planes"];
         const images = [spinner, teddy, plane,]
-        const [translate, setTranslate] = useState(0)
+        const [index, setIndex] = useState(0)
 
-        const nextText = ()=>{
-            if(translate < 200){
-                setTranslate(translate + 100)
-            } else {
-                setTranslate(0)
-            }
-        }
+        const nextText = useCallback(() => {
+            setIndex((index + 1) % texts.length);
+            console.log(index)
+        }, [index, texts]);
 
-        const prevText = ()=>{
-            if(translate > 0){
-                setTranslate(translate - 100)
-            } else{
-                setTranslate(200)
-            }
-        }
+        const prevText = useCallback(() => {
+            setIndex((index - 1 + texts.length) % texts.length);
+            console.log(index)
+        }, [index, texts]);
 
         useEffect(()=>{
-            clearTimeout();
-            setTimeout(() => {
-                nextText()
-            }, 5000);
-        }, [translate])
+            const timeOut = ()=>{
+                setTimeout(() => {
+                    nextText()
+                    console.log("here")
+                }, 10000);
+            };
+            return ()=>clearTimeout(timeOut)
+        },[index])
 
 
     return (
-        <div className='bg-enfanato/20 rounded-xl xl:h-[550px] lg:h-[450px] md:h-[350px] h-[350px] bg-white m-3 relative '>
+        <div className='bg-enfanato/50 rounded-xl xl:h-[550px] lg:h-[450px] md:h-[350px] h-[350px] m-3 relative '>
                 <div className='w-full h-full flex items-center justify-between px-2 absolute z-50'>
                     <button className='lg:h-16 md:h-12 h-10 lg:w-16 md:w-12 w-10 border border-neutral-300 rounded-full flex items-center justify-center bg-white' onClick={()=>prevText()}>
                         <FaArrowLeft />
@@ -50,7 +48,7 @@ const HeroSlider = () => {
                     <div className='overflow-hidden relative flex flex-col  w-full h-full'>
                         {
                             texts?.map((item, i)=>(
-                                <div className={`min-h-full h-full  -translate-y-[${translate}%] duration-1000 flex flex-col items-end justify-center px-16`} key={i} >
+                                <div className={`min-h-full h-full duration-1000 flex flex-col items-end justify-center px-16`} key={i} style={{transform: `translateY(-${index * 100}%)`, transition: 'transform 1s'}} >
                                     <h2 className='translate-x-5 lg:text-8xl md:text-6xl text-4xl leading-snug text-elemental font-bold'>{item}</h2>
                                 </div>
                             ))
@@ -60,9 +58,9 @@ const HeroSlider = () => {
                     <div className='relative flex items-center justify-center w-full'>
                         {
                             images?.map((item, i)=>(
-                                <div key={i} className={`${translate === i* 100 ? "opacity-100" : "opacity-0"} flex items-center justify-center transition-all ease-in-out absolute h-full duration-1000 p-5 `}>
-                                    <img src={item} alt="img" className='w-full object-cover'/>
-                                </div>
+                                    <div className={` flex items-center justify-center transition-all absolute ease-in-out min-w-full max-h-full duration-1000 p-5 `} key={i} style={{ transition: 'opacity 1s  ease-in-out', opacity: index === i ? 1 : 0}}>
+                                        <img src={item} alt="item" className='h-full object-cover scale-110 lg:scale-95 ' />
+                                    </div>
                             ))
                         }
                     </div>
