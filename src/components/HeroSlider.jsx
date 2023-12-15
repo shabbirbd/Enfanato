@@ -28,7 +28,7 @@ const HeroSlider = () => {
             intervalRef.current = setInterval(() => {
               nextText();
               console.log("here")
-            }, 3000);
+            }, 5000);
             return () => clearInterval(intervalRef.current); 
           },[index, nextText]);
 
@@ -55,11 +55,11 @@ const HeroSlider = () => {
                         }
                     </div>
 
-                    <div className='relative flex items-center justify-center w-full'>
+                    <div className='relative flex items-center justify-center overflow-hidden w-full'>
                         {
                             images?.map((item, i)=>(
-                                    <div className={` flex items-center justify-center transition-all absolute ease-in-out min-w-full max-h-full duration-1000 p-5 `} key={i} style={{ transition: 'opacity 1s  ease-in-out', opacity: index === i ? 1 : 0}}>
-                                        <img src={item} alt="item" className='h-full object-cover scale-110 lg:scale-95 ' />
+                                    <div className={`flex justify-center transition-all absolute ease-in-out min-w-full h-full duration-1000 p-5 `} key={i} style={{ transition: 'all 1s  ease-in-out', opacity: index === i ? 1 : 0, transform: index === i ? 'translateX(0%)' : "translateX(100%)", }}>
+                                        <img src={item} alt="item" className='object-contain md:scale-100 scale-125'/>
                                     </div>
                             ))
                         }
