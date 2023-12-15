@@ -25,7 +25,7 @@ export const products =[
         price: "20.50",
         images: [babycart2, babycart1],
         seller: "Seller",
-        category: "new"
+        category: "best"
     },
     {
         title: "Some Title",
@@ -109,14 +109,14 @@ export const products =[
         price: "20.50",
         images: [babycart1, babycart2],
         seller: "Seller",
-        category: "new"
+        category: "best"
     },
     {
         title: "Some Title",
         price: "20.50",
         images: [babycart1, babycart2],
         seller: "Seller",
-        category: "new"
+        category: "best"
     },
     {
         title: "Some Title",
