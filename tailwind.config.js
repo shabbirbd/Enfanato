@@ -11,7 +11,8 @@ export default {
       },
       colors: {
         'enfanato' : "#FAB6B6",
-        'elemental' : "#7461B0"
+        'elemental' : "#7461B0",
+        'textal' : "#605D70",
       }
     },
   },

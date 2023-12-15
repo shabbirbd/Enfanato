@@ -49,7 +49,7 @@ const HeroSlider = () => {
                         {
                             texts?.map((item, i)=>(
                                 <div className={`min-h-full h-full duration-1000 flex flex-col items-end justify-center px-16`} key={i} style={{transform: `translateY(-${index * 100}%)`, transition: 'transform 1s'}} >
-                                    <h2 className='translate-x-5 lg:text-8xl md:text-6xl text-4xl leading-snug text-elemental font-bold'>{item}</h2>
+                                    <h2 className='translate-x-5 lg:text-8xl md:text-6xl text-4xl leading-snug text-textal font-bold'>{item}</h2>
                                 </div>
                             ))
                         }
