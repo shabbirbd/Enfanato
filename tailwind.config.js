@@ -8,6 +8,7 @@ export default {
     extend: {
       backgroundImage: {
         'main-pattern': "url('./src/assets/mainbg2.png')",
+        'main-pattern2': "url('./src/assets/mainbg.png')",
       },
       colors: {
         'enfanato' : "#FAB6B6",
