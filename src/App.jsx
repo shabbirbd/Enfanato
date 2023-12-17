@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom"
+import Footer from "./components/Footer"
 import Topbar from "./components/Topbar"
 import Navbar from "./components/navbar/Navbar"
 import Home from "./pages/Home"
@@ -13,11 +14,13 @@ function App() {
           <Topbar/>
           <Navbar/>
 
-          <div className="-translate-y-7">
+          <div className="-translate-y-7 bg-white pb-16 ">
             <Routes>
               <Route path="/" element={<Home/>} />
             </Routes>
           </div>
+
+          <Footer/>
         </div>
       </main>
   )
