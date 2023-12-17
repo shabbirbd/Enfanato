@@ -18,8 +18,8 @@ const SliderButton = ({children, type})=>{
 
 const Reviews = () => {
     return (
-        <div className='mt-14 border-2 border-yellow-500 bg-main-pattern2 bg-[length:250px_250px] bg-repeatrelative'>
-            <div className=' w-full min-h-full bg-sky-600/60 py-10  flex flex-col items-center '>
+        <div className='mt-14 bg-main-pattern2 bg-[length:250px_250px] bg-repeatrelative'>
+            <div className=' w-full min-h-full bg-sky-900/80 py-16  flex flex-col items-center '>
                 <h2 className='text-3xl font-bold text-white'>What parent says</h2>
                 <p className='block h-1 w-[60px] bg-white mt-1'></p>
 
