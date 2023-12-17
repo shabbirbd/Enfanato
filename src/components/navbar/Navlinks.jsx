@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { navlinks } from '../../data/navLinks';
 
 
@@ -9,10 +10,10 @@ const Navlinks = () => {
                 {
                     navlinks?.map((item, i)=>(
                         <li key={i}>
-                            <a href={item.link} className='flex flex-col items-center space-y-3 text-sm font-semibold text-neutral-600 hover:text-elemental duration-300 '>
+                            <Link to={item.link} className='flex flex-col items-center space-y-3 text-sm font-semibold text-neutral-600 hover:text-elemental duration-300 '>
                                 <img src={item.icon} alt="icon" className='h-10  object-cover hover:scale-105 duration-500 '/>
                                 <span >{item.title}</span>
-                            </a>
+                            </Link>
                         </li>
                     ))
                 }
