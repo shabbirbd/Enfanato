@@ -44,7 +44,6 @@ const Blogs = () => {
                                     <span>{item.views}</span>
                                 </p>
                             </div>
-
                         </div>
                     ))
                 }

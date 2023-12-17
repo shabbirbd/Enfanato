@@ -4,19 +4,23 @@ import { FaCodeCompare } from "react-icons/fa6";
 
 
 
-
 const ProductCard = ({product}) => {
     const [preview, setPreview] = useState(false)
+    const [openModal, setOpenModal] = useState(false);
+
 
     return (
         <>
-{/*         
+        {/*         
         {
             preview && 
             <div className='border-2 z-50 border-blue-600 absolute h-full lg:h-[450px]'>
                 <PreviewModal setPreview={setPreview} product={product}/>
             </div>
         } */}
+        {/* <Modal openModal={openModal} setOpenModal={setOpenModal} data={product}/>   */}
+
+
 
         <div className='outline-dashed outline-[1px] outline-neutral-300 rounded-xl flex flex-col  p-3 hover:bg-enfanato duration-300 group relative'>
             <div className='xl:h-[280px] lg:h-[250px] md:h-[230px] h-[230px] overflow-hidden relative'>
@@ -33,9 +37,9 @@ const ProductCard = ({product}) => {
                         <FaRegHeart />
                     </button>
                     <button className='h-8 w-8 rounded-full text-white hover:bg-enfanato/70 duration-300 bg-enfanato flex items-center justify-center' >
-                        <FaCodeCompare />
+                        <FaCodeCompare />   
                     </button>
-                    <button className='h-8 w-8 rounded-full text-white hover:bg-enfanato/70 duration-300 bg-enfanato flex items-center justify-center' onClick={()=> setPreview(true)}>
+                    <button className='h-8 w-8 rounded-full text-white hover:bg-enfanato/70 duration-300 bg-enfanato flex items-center justify-center' onClick={()=> setOpenModal(true)}>
                         <FaRegEye />
                     </button>
 
