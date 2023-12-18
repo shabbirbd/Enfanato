@@ -7,7 +7,7 @@ import { navlinks } from '../../data/navLinks';
 const MobileMenu = ({open, setOpen}) => {
 
     return (
-        <div className={`w-1/2 min-h-screen h-full absolute top-0 z-[9999]  lg:hidden bg-white flex flex-col justify-between  duration-500 ${open ? "-translate-x-0": "-translate-x-[200%]"}`}>
+        <div className={`w-1/2 min-h-screen h-full fixed top-0 z-[100]  lg:hidden bg-white flex flex-col justify-between  duration-500 ${open ? "-translate-x-0": "-translate-x-[200%]"}`}>
             <div className='w-full flex justify-end items-center h-16 px-5 bg-elemental'>
                 <button className='text-sm font-semibold text-white' onClick={()=>setOpen(false)}>
                     <ImCross />
