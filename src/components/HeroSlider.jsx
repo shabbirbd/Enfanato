@@ -33,7 +33,7 @@ const HeroSlider = () => {
 
     return (
         <div className='bg-enfanato/50 rounded-xl xl:h-[550px] lg:h-[450px] md:h-[350px] h-[350px] m-3 relative group overflow-hidden'>
-                <div className='w-full h-full flex items-center justify-between px-2 absolute z-50'>
+                <div className='w-full h-full flex items-center justify-between px-2 absolute z-30'>
                     <button className='lg:h-16 md:h-12 h-10 lg:w-16 md:w-12 w-10 border border-neutral-300 rounded-full flex items-center justify-center bg-white duration-300 md:-translate-x-[200%] group-hover:md:-translate-x-0 -translate-x-0' onClick={()=>prevText()}>
                         <FaArrowLeft />
                     </button>

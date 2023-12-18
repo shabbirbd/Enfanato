@@ -31,7 +31,7 @@ const Footer = () => {
                 </g>
             </svg>
             
-            <div className='bg-[#95B9E5] flex flex-col items-center z-50'>
+            <div className='bg-[#95B9E5] flex flex-col items-center z-40'>
                 <div className='lg:px-0 px-5 flex flex-col lg:flex-row items-center justify-center space-x-0 lg:space-x-3'>
                     <h2 className='font-semibold text-lg text-white flex-shrink-0 lg:-translate-y-2 -translate-y-0'>Sign up to newsletter</h2>
                     <div className='flex flex-col items-center w-full max-w-96 '>
@@ -69,7 +69,7 @@ const Footer = () => {
                         }
                     </div>
 
-                    <div className=' grid grid-cols-3 gap-3'>
+                    <div className=' grid grid-cols-3 gap-3 px-5'>
                         <div className=' col-span-1'>
                             <h3 className='font-semibold text-md text-white'>Contact us</h3>
                             <span className='block h-[3px] w-8 mt-1 bg-white'></span>

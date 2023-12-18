@@ -31,7 +31,7 @@ const Topbar = () => {
     ]
 
     return (
-        <div className='h-12 md:h-14  relative w-full bg-transparent z-50 '>
+        <div className='h-12 md:h-14  relative w-full bg-transparent z-30 '>
             <Wave rotate fill="#FAB6B6"/>
             
             <div className='flex flex-row items-center space-x-2 relative px-5 top-2'>

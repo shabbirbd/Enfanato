@@ -42,7 +42,7 @@ const Reviews = () => {
                                 </SwiperSlide>
                         ))
                     }
-                    <div className='w-full z-50 flex items-center justify-between px-3 absolute -translate-y-[300%] text-white font-bold text-2xl'>
+                    <div className='w-full z-40 flex items-center justify-between px-3 absolute -translate-y-[300%] text-white font-bold text-2xl'>
                        <SliderButton>
                         <MdOutlineArrowBackIos />
                        </SliderButton>

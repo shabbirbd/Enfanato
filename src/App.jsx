@@ -15,7 +15,7 @@ function App() {
           <Topbar/>
           <Navbar/>
 
-          <div className="-translate-y-7 bg-white pb-16 ">
+          <div className="-translate-y-7 bg-white pb-16 z-50 ">
             <Routes>
               <Route path="/" element={<Home/>} />
               <Route path="/signin" element={<Signin/>} />
