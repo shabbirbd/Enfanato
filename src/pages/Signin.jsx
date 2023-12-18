@@ -6,7 +6,7 @@ const Signin = () => {
     const [hidePassword, setHidePassword] = useState(false);
 
     return (
-        <div className=' px-5'>
+        <div className='py-5 px-5'>
             <p className='text-sm font-normal text-neutral-300'>Home / login</p>
 
             <h2 className='text-3xl md:text-4xl lg:text-5xl font-bold text-textal mt-14'>Login to your account</h2>

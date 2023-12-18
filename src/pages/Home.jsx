@@ -6,7 +6,7 @@ import Reviews from '../components/Reviews';
 
 const Home = () => {
     return (
-        <div className='border-2 border-red-500 bg-white'>
+        <div className='bg-white py-5'>
             <HeroSlider/>
             <Products/>
             <Reviews/>

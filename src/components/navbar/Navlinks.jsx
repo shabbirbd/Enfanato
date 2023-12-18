@@ -5,7 +5,7 @@ import { navlinks } from '../../data/navLinks';
 
 const Navlinks = () => {
     return (
-        <div className='bg-white lg:py-7 py-5 relative  z-30 hidden lg:block'>
+        <div className='bg-white lg:py-7 py-5 relative  z-30 hidden lg:block shadow-lg '>
             <ul className='flex items-center justify-center space-x-8'>
                 {
                     navlinks?.map((item, i)=>(
