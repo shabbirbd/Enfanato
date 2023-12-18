@@ -5,7 +5,7 @@ import { navlinks } from '../../data/navLinks';
 
 
 const MobileMenu = ({open, setOpen}) => {
-    console.log(open)
+
     return (
         <div className={`w-1/2 h-screen absolute top-0 z-50 lg:hidden bg-white flex flex-col justify-between transform duration-500 ${open ? "-translate-x-0": "-translate-x-[200%]"}`}>
             <div className='w-full flex justify-end items-center h-16 px-5 bg-elemental'>

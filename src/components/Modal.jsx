@@ -1,5 +1,5 @@
 import { Dialog } from "@headlessui/react";
-import { Carousel, CarouselItem } from "@material-tailwind/react";
+import { Carousel } from "@material-tailwind/react";
 // import CarouselItem from "@material-tailwind/react/CarouselItem";
 
 
@@ -19,21 +19,15 @@ const Modal = ({openModal, setOpenModal , data}) => {
                     <Dialog.Title className="text-lg font-medium text-gray-800">Product Details</Dialog.Title>
                     <Dialog.Description className="mt-2 text-sm text-gray-500">{data?.description}</Dialog.Description>
                     <Carousel
-                        activeSlide={activeSlide}
-                        onChange={(index) => setActiveSlide(index)}
                         className="mt-4 rounded-xl"
                     >
                         {data?.images.map((item, i) => (
                             <div className="" key={i}> 
-                                <CarouselItem
-                                    activeSlide={activeSlide}
-                                >
                                     <img
                                         src={item}
                                         alt={`image ${i + 1}`}
                                         className="h-full w-full object-cover"
                                     />
-                                </CarouselItem>
                             </div>
                         ))}
                     </Carousel>

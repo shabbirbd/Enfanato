@@ -2,6 +2,7 @@ import React from 'react';
 import { FaSearch, FaShoppingCart, FaThList } from "react-icons/fa";
 import { FiHeart } from "react-icons/fi";
 import { GoPersonFill, GoSearch } from "react-icons/go";
+import { Link } from 'react-router-dom';
 import enfanato from '../../assets/enfanato.png';
 import Wave from '../Wave';
 
@@ -30,10 +31,10 @@ const NavHeader = ({setOpen}) => {
                         <FaSearch className='cursor-pointer font-bold text-2xl'/>
                     </div>
 
-                    <div className='flex flex-col items-center cursor-pointer duration-300 hover:text-elemental'>
+                    <Link to={"/signin"} className='flex flex-col items-center cursor-pointer duration-300 hover:text-elemental'>
                         <GoPersonFill className='cursor-pointer font-bold text-2xl'/>
-                        <p className='text-sm hidden lg:block'>Sign In</p>
-                    </div>
+                        <p  className='text-sm hidden lg:block'>Sign In</p>
+                    </Link>
 
                     <div className='lg:flex hidden flex-col items-center cursor-pointer duration-300 hover:text-elemental'>
                         <FiHeart className='cursor-pointer font-bold text-2xl'/>

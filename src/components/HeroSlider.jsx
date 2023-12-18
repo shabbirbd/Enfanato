@@ -15,7 +15,6 @@ const HeroSlider = () => {
 
         const nextText = useCallback(() => {
             setIndex((index + 1) % texts.length);
-            console.log(index)
         }, [index, texts]);
 
         const prevText = useCallback(() => {
@@ -27,7 +26,6 @@ const HeroSlider = () => {
         useEffect(()=>{
             intervalRef.current = setInterval(() => {
               nextText();
-              console.log("here")
             }, 5000);
             return () => clearInterval(intervalRef.current); 
           },[index, nextText]);

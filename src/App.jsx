@@ -3,6 +3,7 @@ import Footer from "./components/Footer"
 import Topbar from "./components/Topbar"
 import Navbar from "./components/navbar/Navbar"
 import Home from "./pages/Home"
+import Signin from "./pages/Signin"
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <div className="-translate-y-7 bg-white pb-16 ">
             <Routes>
               <Route path="/" element={<Home/>} />
+              <Route path="/signin" element={<Signin/>} />
             </Routes>
           </div>
 
