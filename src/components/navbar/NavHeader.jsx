@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { FaSearch, FaShoppingCart, FaThList } from "react-icons/fa";
 import { FiHeart } from "react-icons/fi";
 import { GoPersonFill, GoSearch } from "react-icons/go";
@@ -13,6 +13,24 @@ import Wave from '../Wave';
 const NavHeader = ({setOpen}) => {
     const [cartOpen, setCartOpen] = useState(false);
     const [cart, setCart] = useContext(CartContext);
+    const cartCardRef = useRef(null);
+    const cartIconRef = useRef(null);
+    const totalCartedQuantity = JSON.stringify(cart.reduce((sum, item)=> sum + item.quantity, 0));
+    
+
+
+    useEffect(()=>{
+        const handleClickOutside = (event)=>{
+            if(cartCardRef.current && cartIconRef.current && !cartCardRef.current.contains(event.target) && !cartIconRef.current.contains(event.target)){
+                setCartOpen(false);
+            }
+        }
+
+        document.addEventListener('click', handleClickOutside);
+
+        return ()=> document.removeEventListener('click', handleClickOutside)
+
+    }, [cartCardRef, cartIconRef, cart])
 
     return (
         <div className='bg-[#F9F5F5] relative z-40 lg:py-0'>
@@ -45,16 +63,16 @@ const NavHeader = ({setOpen}) => {
                         <p className='text-sm hidden lg:block'>Whitelist (0)</p>
                     </Link>
 
-                    <div className='flex flex-col items-center relative cursor-pointer' onClick={()=>setCartOpen(true)}>
+                    <div className='flex flex-col items-center relative cursor-pointer' onClick={()=>setCartOpen(true)} ref={cartIconRef}>
                         <p className='relative  text-elemental'>
                             <FaShoppingCart className='cursor-pointer font-bold text-2xl' />
-                            <span className='flex items-center justify-center bg-enfanato text-white h-[15px] w-[15px] text-[12px] rounded-full absolute -top-1 -right-1'>{cart.length}</span>
+                            <span className='flex items-center justify-center bg-enfanato text-white h-[15px] w-[15px] text-[12px] rounded-full absolute -top-1 -right-1'>{totalCartedQuantity}</span>
                         </p>
                         <p className='text-sm hidden lg:block  text-elemental'>Cart</p>
 
                         {
                             cartOpen &&
-                            <div className=' absolute top-12 right-0 z-50'>
+                            <div className=' absolute top-12 right-0 z-50' ref={cartCardRef}>
                                 <CartCard/>
                             </div>
                         }
