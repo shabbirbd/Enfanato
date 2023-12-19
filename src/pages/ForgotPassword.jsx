@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ForgotPassword = () => {
     return (
@@ -16,7 +17,7 @@ const ForgotPassword = () => {
 
                 <div className='w-full h-[1px] bg-neutral-300 mt-10'></div>
 
-                <a className='mt-5 block text-sm text-neutral-400' href='/signin'>{`<`}Back to login</a>
+                <Link  to='/signin' className='mt-5 block text-sm text-neutral-400' >{`<`}Back to login</Link>
             </div>
             
         </div>

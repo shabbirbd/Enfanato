@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa6';
+import { Link } from 'react-router-dom';
 
 const CheckBox = ({children})=>{
     const [selected, setSelected] = useState(false)
@@ -23,6 +24,7 @@ const DetailedForm = ({signup}) => {
 
     return (
         <form  className='mt-5 flex flex-col space-y-3 w-full'>
+            <Link to='/signin' className='text-sm text-textal'>Already have an account? <span className=' underline'>Log in instead!</span></Link>
             <div className='w-full grid grid-cols-4 py-5'>
                 <p className='text-sm text-textal'>Social title: </p>
                 <div className='col-span-3 w-full space-x-3 flex items-center justify-start text-sm text-textal'>
@@ -61,6 +63,14 @@ const DetailedForm = ({signup}) => {
                 </div>
             </div>
 
+            {
+                !signup &&
+                <div>
+                    <h3 className='font-semibold text-textal text-lg'>Create an account <span className='text-sm font-normal'>{`(optional)`}</span></h3>
+                    <p className='text-[12px] text-textal'>And save time on your next order!</p>
+                </div>
+            }
+            
             <div className='w-full grid grid-cols-4'>
                 <p className='text-sm text-textal '>Email:</p>
                 <div className='col-span-3'>
@@ -98,13 +108,13 @@ const DetailedForm = ({signup}) => {
             <div className='grid grid-cols-4 w-full'>
                 <div className='col-span-3 w-full col-start-2'>
                     <CheckBox>Sign up for our newsletter</CheckBox>
-                    <p className='text-[10px] font-thin'>You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.</p>
+                    <p className='text-[10px] '>You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.</p>
                 </div>
             </div>
 
             <div className='grid grid-cols-4 w-full'>
                 <div className='col-span-3 col-start-2 flex items-center justify-center w-full'>
-                    <button type='button' className='bg-enfanato text-white px-3 py-2'>Sign up</button>
+                    <button type='button' className='bg-enfanato text-white px-3 py-2'>{signup ? "Sign up" : "Continue"}</button>
                 </div>
             </div>
         </form>

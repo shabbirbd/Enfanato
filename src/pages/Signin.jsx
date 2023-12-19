@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 
 const Signin = () => {
@@ -30,14 +31,14 @@ const Signin = () => {
                     </div>
 
                     <div className='flex flex-col space-y-5 '>
-                        <a href='/password-recovery' className='text-sm font-thin text-textal'>Forgot password?</a>
+                        <Link to='/password-recovery' className='text-sm font-thin text-textal'>Forgot password?</Link>
                         <button className='h-10 bg-enfanato text-white hover:outline-dashed outline-1 outline-black' type='button'>Sign in</button>
                     </div>
                 </form>
                 
                 <div className='w-full my-8 h-[1px] bg-neutral-300'></div>
 
-                <a href="/signup" className='text-sm font-normal text-textal hover:text-elemental duration-300'>No account? Create one here..</a>
+                <Link to="/signup" className='text-sm font-normal text-textal hover:text-elemental duration-300'>No account? Create one here..</Link>
             </div>
         </div>
     );
