@@ -1,19 +1,23 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { FaSearch, FaShoppingCart, FaThList } from "react-icons/fa";
 import { FiHeart } from "react-icons/fi";
 import { GoPersonFill, GoSearch } from "react-icons/go";
 import { Link } from 'react-router-dom';
+import { CartContext } from '../../App';
 import enfanato from '../../assets/enfanato.png';
+import CartCard from '../CartCard';
 import Wave from '../Wave';
 
 
 
 const NavHeader = ({setOpen}) => {
+    const [cartOpen, setCartOpen] = useState(false);
+    const [cart, setCart] = useContext(CartContext);
 
     return (
         <div className='bg-[#F9F5F5] relative z-40 lg:py-0'>
             <div className='md:py-7 pt-5 w-full flex items-center justify-between px-5 z-10'>
-                <div className='outline-dashed outline-1 outline-red-600 bg-white max-w-xs w-full  py-3 px-3  items-center justify-between hidden lg:flex'>
+                <div className='outline-dashed outline-1 outline-enfanato bg-white max-w-xs w-full  py-3 px-3  items-center justify-between hidden lg:flex'>
                     <input type="text" className='font-base text-sm leading-3 focus:outline-none' placeholder='Search our catalogue'/>
                     <GoSearch className='cursor-pointer'/>
                 </div>
@@ -36,17 +40,24 @@ const NavHeader = ({setOpen}) => {
                         <p  className='text-sm hidden lg:block'>Sign In</p>
                     </Link>
 
-                    <div className='lg:flex hidden flex-col items-center cursor-pointer duration-300 hover:text-elemental'>
+                    <Link to="/signin" className='lg:flex hidden flex-col items-center cursor-pointer duration-300 hover:text-elemental'>
                         <FiHeart className='cursor-pointer font-bold text-2xl'/>
                         <p className='text-sm hidden lg:block'>Whitelist (0)</p>
-                    </div>
+                    </Link>
 
-                    <div className='flex flex-col items-center cursor-pointer text-elemental'>
-                        <p className='relative'>
+                    <div className='flex flex-col items-center relative cursor-pointer' onClick={()=>setCartOpen(true)}>
+                        <p className='relative  text-elemental'>
                             <FaShoppingCart className='cursor-pointer font-bold text-2xl' />
-                            <span className='flex items-center justify-center bg-enfanato text-white h-[15px] w-[15px] text-[12px] rounded-full absolute -top-1 -right-1'>7</span>
+                            <span className='flex items-center justify-center bg-enfanato text-white h-[15px] w-[15px] text-[12px] rounded-full absolute -top-1 -right-1'>{cart.length}</span>
                         </p>
-                        <p className='text-sm hidden lg:block'>Cart</p>
+                        <p className='text-sm hidden lg:block  text-elemental'>Cart</p>
+
+                        {
+                            cartOpen &&
+                            <div className=' absolute top-12 right-0 z-50'>
+                                <CartCard/>
+                            </div>
+                        }
                     </div>
 
                     <div className='flex flex-col items-center duration-300 hover:text-elemental lg:hidden'>
