@@ -42,9 +42,9 @@ const NavHeader = ({setOpen}) => {
                 
 
 
-                <a href="/" className='flex-shrink-0'>
+                <Link to="/" className='flex-shrink-0'>
                     <img src={enfanato} alt="icon" className='h-20 hover:scale-105 duration-300' />
-                </a>
+                </Link>
 
 
 

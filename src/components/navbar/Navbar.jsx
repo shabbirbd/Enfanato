@@ -7,7 +7,7 @@ const Navbar = () => {
     const [open, setOpen] = useState(false);
 
     return (
-        <div className='-translate-y-7 relative z-40'>
+        <div className='-translate-y-7 relative  z-40'>
             <NavHeader setOpen={setOpen}/>
             <Navlinks/>
             <MobileMenu open={open} setOpen={setOpen}/>
