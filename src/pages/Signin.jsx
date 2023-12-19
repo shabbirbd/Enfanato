@@ -30,7 +30,7 @@ const Signin = () => {
                     </div>
 
                     <div className='flex flex-col space-y-5 '>
-                        <a href='#' className='text-sm font-thin text-textal'>Forgot password?</a>
+                        <a href='/password-recovery' className='text-sm font-thin text-textal'>Forgot password?</a>
                         <button className='h-10 bg-enfanato text-white hover:outline-dashed outline-1 outline-black' type='button'>Sign in</button>
                     </div>
                 </form>
