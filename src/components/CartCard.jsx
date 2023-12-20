@@ -10,7 +10,7 @@ import Counter from './Counter';
 
 const CartCard = () => {
     const [cart, setCart] = useContext(CartContext);
-    const cartedProducts = cart.map((item)=>{
+    const cartedProducts = cart?.map((item)=>{
        return products.find((product)=> item.productId === product.id )
     });
     const totalCartedItem = cart.reduce((sum, item)=> sum + item.quantity, 0);

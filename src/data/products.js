@@ -9,7 +9,7 @@ export const products =[
     {
         id:1,
         title: "Some Title",
-        price: "20.50",
+        price: "60.50",
         images: [babycart1, babycart2],
         seller: "Seller",
         category: "new"
@@ -17,7 +17,7 @@ export const products =[
     {
         id:2,
         title: "Some Title",
-        price: "20.50",
+        price: "30.50",
         images: [barbie1, barbie2],
         seller: "Seller",
         category: "new"
@@ -33,7 +33,7 @@ export const products =[
     {
         id:4,
         title: "Some Title",
-        price: "20.50",
+        price: "40.50",
         images: [barbie2, barbie1],
         seller: "Seller",
         category: "best"
@@ -41,7 +41,7 @@ export const products =[
     {
         id:5,
         title: "Some Title",
-        price: "20.50",
+        price: "70.50",
         images: [handtoy1, handtoy2],
         seller: "Seller",
         category: "new"
@@ -49,7 +49,7 @@ export const products =[
     {
         id:6,
         title: "Some Title",
-        price: "20.50",
+        price: "10.50",
         images: [handtoy2, handtoy1],
         seller: "Seller",
         category: "new"
@@ -62,43 +62,27 @@ export const products =[
         seller: "Seller",
         category: "best"
     },
-    {
+    {   id: 8,
         title: "Some Title",
-        price: "20.50",
+        price: "50.50",
         images: [barbie1, barbie2],
-        seller: "Seller",
-        category: "new"
-    },
-    {
-        id:8,
-        title: "Some Title",
-        price: "20.50",
-        images: [barbie2, barbie1],
-        seller: "Seller",
-        category: "new"
-    },
-    {
-        title: "Some Title",
-        price: "20.50",
-        images: [babycart1, babycart2],
         seller: "Seller",
         category: "new"
     },
     {
         id:9,
         title: "Some Title",
-        price: "20.50",
-        images: [babycart1, babycart2],
+        price: "60.50",
+        images: [barbie2, barbie1],
         seller: "Seller",
         category: "new"
     },
-    {
-        id:10,
+    {   id: 10,
         title: "Some Title",
-        price: "20.50",
+        price: "70.50",
         images: [babycart1, babycart2],
         seller: "Seller",
-        category: "best"
+        category: "new"
     },
     {
         id:11,
@@ -122,7 +106,7 @@ export const products =[
         price: "20.50",
         images: [babycart1, babycart2],
         seller: "Seller",
-        category: "best"
+        category: "new"
     },
     {
         id:14,
@@ -138,7 +122,7 @@ export const products =[
         price: "20.50",
         images: [babycart1, babycart2],
         seller: "Seller",
-        category: "new"
+        category: "best"
     },
     {
         id:16,
@@ -149,7 +133,15 @@ export const products =[
         category: "best"
     },
     {
-        id:17,
+        id:117,
+        title: "Some Title",
+        price: "20.50",
+        images: [babycart1, babycart2],
+        seller: "Seller",
+        category: "new"
+    },
+    {
+        id:18,
         title: "Some Title",
         price: "20.50",
         images: [babycart1, babycart2],
@@ -157,7 +149,15 @@ export const products =[
         category: "best"
     },
     {
-        id:18,
+        id:19,
+        title: "Some Title",
+        price: "20.50",
+        images: [babycart1, babycart2],
+        seller: "Seller",
+        category: "best"
+    },
+    {
+        id:20,
         title: "Some Title",
         price: "20.50",
         images: [babycart1, babycart2],
