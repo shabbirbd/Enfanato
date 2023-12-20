@@ -13,11 +13,12 @@ const CartCard = () => {
     const cartedProducts = cart?.map((item)=>{
        return products.find((product)=> item.productId === product.id )
     });
+    console.log(cartedProducts, "cart")
     const totalCartedItem = cart.reduce((sum, item)=> sum + item.quantity, 0);
     const totalPrice = cart.reduce((sum, item)=> {
                             const price = cartedProducts.find((product)=>product.id === item.productId).price;
                             return sum + (item.quantity * price)
-                        }, 0);
+                        }, 0)
     const shippingFee = totalPrice >= 250 ? 0 : 7.99;
                         
 
@@ -72,7 +73,7 @@ const CartCard = () => {
 
             <div className='flex items-center justify-between text-textal'>
                 <h3 className='font-semibold text-lg'>Total {`(tax incl.)`}</h3>
-                <p className='text-sm'>${totalPrice + shippingFee}</p>
+                <p className='text-sm'>${(totalPrice + shippingFee).toFixed(2)}</p>
             </div>
 
             <div className='bg-[#D1ECF1] w-full mt-3 p-2'>
