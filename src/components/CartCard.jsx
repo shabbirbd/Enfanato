@@ -13,13 +13,11 @@ const CartCard = () => {
     const cartedProducts = cart?.map((item)=>{
        return products.find((product)=> item.productId === product.id )
     });
-    console.log(cartedProducts, "cart")
     const totalCartedItem = cart.reduce((sum, item)=> sum + item.quantity, 0);
-    const totalPrice = cart.reduce((sum, item)=> {
+    const totalPrice =cartedProducts !== undefined && cart.reduce((sum, item)=> {
                             const price = cartedProducts.find((product)=>product.id === item.productId).price;
-                            return sum + (item.quantity * price)
-                        }, 0)
-    const shippingFee = totalPrice >= 250 ? 0 : 7.99;
+                            return sum + (item.quantity * price)}, 0)
+    const shippingFee = totalPrice >= 250 ? 0 : totalPrice === 0 ? 0 : 7.99;
                         
 
             
@@ -27,7 +25,6 @@ const CartCard = () => {
     const handleDelet = (id)=>{
         const newCart = cart.filter((item)=> item.productId !== id );
         setCart(newCart);
-        console.log(cart)
     }
 
 
@@ -82,6 +79,10 @@ const CartCard = () => {
 
             <div className='w-full bg-enfanato/80 hover:bg-enfanato duration-300 hover:outline-dashed outline-1 outline-black text-white mt-3 flex justify-center items-center py-3'>
                 <Link to='/checkout' className='w-full h-full text-center'>Checkout</Link>
+            </div>
+
+            <div className='w-full border border-enfanato hover:outline-dashed outline-1 outline-black hover:bg-enfanato hover:text-white flex items-center justify-center mt-3 py-2'>
+                <Link to='/cart' className='w-full h-full text-center'>Cart</Link>
             </div>
 
         </div>  

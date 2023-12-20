@@ -27,7 +27,7 @@ const CheckoutCard = () => {
         const price = cartedProducts.find((product)=> product.id === item.productId).price;
         return sum + (item.quantity * price)
     }, 0) || 0;
-    const shippingFee = total >= 250 ? 0 : 7.99;
+    const shippingFee = total >= 250 ? 0 : total === 0 ? 0 : 7.99;
 
 
     

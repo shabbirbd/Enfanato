@@ -36,7 +36,7 @@ const Footer = () => {
                     <h2 className='font-semibold text-lg text-white flex-shrink-0 lg:-translate-y-2 -translate-y-0'>Sign up to newsletter</h2>
                     <div className='flex flex-col items-center w-full max-w-96 '>
                         <form action='submit' className='flex items-center justify-between bg-white w-full'>
-                            <input type="text" placeholder='your email address' className='focus:outline-none m-2 text-md' />
+                            <input type="text" placeholder='your email address' className='focus:outline-none m-2 text-md w-full' />
                             <button type='button' className='bg-white h-full duration-300 hover:bg-enfanato px-3 hover:text-white font-bold text-lg'>
                                 <MdOutlineMailOutline />    
                             </button>

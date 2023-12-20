@@ -9,6 +9,9 @@ const Counter = ({id}) => {
     const [count, setCount] = useState(initialCount);
 
 
+    useEffect(()=>{
+        setCount(initialCount)
+    }, [cart])
 
     useEffect(()=>{
         const oldCart = [...cart];
@@ -20,7 +23,6 @@ const Counter = ({id}) => {
             return newP;
         });
         setCart(updatedCart)
-        
     }, [count, id])
 
     return (
