@@ -133,7 +133,7 @@ export const products =[
         category: "best"
     },
     {
-        id:117,
+        id:17,
         title: "Some Title",
         price: "20.50",
         images: [babycart1, babycart2],
