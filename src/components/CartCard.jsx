@@ -40,7 +40,7 @@ const CartCard = () => {
                                 <span className='text-[12px] text-textal'>Size: s</span>
                                 <span className='text-[12px] text-textal'>Color: Yellow</span>
                                 <div className='flex items-center mt-2 justify-between'>
-                                    <Counter id={item.id}/>
+                                    <Counter id={item.id} />
                                     <p className='ml-2 flex items-center text-[12px] text-textal'>
                                         <span><RxCross2 /> </span>${item.price}
                                     </p>
@@ -81,7 +81,7 @@ const CartCard = () => {
                 <Link to='/checkout' className='w-full h-full text-center'>Checkout</Link>
             </div>
 
-            <div className='w-full border border-enfanato hover:outline-dashed outline-1 outline-black hover:bg-enfanato hover:text-white flex items-center justify-center mt-3 py-2'>
+            <div className='w-full border border-enfanato hover:bg-enfanato hover:text-white flex items-center justify-center mt-3 py-2'>
                 <Link to='/cart' className='w-full h-full text-center'>Cart</Link>
             </div>
 

@@ -3,27 +3,30 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { CartContext } from '../App';
 
 
-const Counter = ({id}) => {
+const Counter = ({id , newProduct}) => {
     const [cart, setCart] = useContext(CartContext);
-    const initialCount = cart.find((ietm)=> ietm.productId === id).quantity;
+    const initialCount = cart.find((ietm)=> ietm.productId === id)?.quantity || 1;
     const [count, setCount] = useState(initialCount);
 
 
-    useEffect(()=>{
-        setCount(initialCount)
-    }, [cart])
-
-    useEffect(()=>{
-        const oldCart = [...cart];
-        const updatedCart = oldCart.map((product)=>{
-            const newP = {...product}
-            if(newP.productId === id){
-                newP.quantity = count;
-            }
-            return newP;
-        });
-        setCart(updatedCart)
-    }, [count, id])
+    {
+        !newProduct &&
+        useEffect(()=>{
+            setCount(initialCount)
+        }, [cart])
+    
+        useEffect(()=>{
+            const oldCart = [...cart];
+            const updatedCart = oldCart.map((product)=>{
+                const newP = {...product}
+                if(newP.productId === id){
+                    newP.quantity = count;
+                }
+                return newP;
+            });
+            setCart(updatedCart)
+        }, [count, id])
+    }
 
     return (
         <div className=' h-10 w-20 flex items-center justify-between'>
