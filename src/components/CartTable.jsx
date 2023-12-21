@@ -29,8 +29,8 @@ const CartTable = () => {
      
 
     return (
-        <div className='w-full border-t border-b border-neutral-300 px-3'>
-            <div className='grid grid-cols-12 gap-2 font-semibold text-sm text-textal py-3'>
+        <div className='w-full border-t  border-neutral-300'>
+            <div className='grid grid-cols-12 gap-2 font-semibold text-sm text-textal py-3 px-3'>
                 <p className='col-span-5 text-center'>Product</p>
                 <p className='col-span-2 text-center'>Price</p>
                 <p className='col-span-2 text-center'>Quantity</p>
@@ -59,6 +59,8 @@ const CartTable = () => {
 
 
                         <button className='text-textal font-bold text-md' onClick={()=>handleDelet(product.id)}><RiDeleteBin6Line /></button>
+
+                        <div className='w-full h-[1px] bg-neutral-300 col-span-12'></div>
                         
                     </div>
                 ))

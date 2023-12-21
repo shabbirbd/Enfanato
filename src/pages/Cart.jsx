@@ -1,5 +1,6 @@
 import React from 'react';
 import CartTable from '../components/CartTable';
+import CheckoutCard from '../components/CheckoutCard';
 
 const Cart = () => {
     return (
@@ -11,8 +12,8 @@ const Cart = () => {
                     <CartTable/>
                 </div>
 
-                <div className='border border-red-900 lg:col-span-2 w-full'>
-                    hello card
+                <div className=' lg:col-span-2 w-full'>
+                    <CheckoutCard inCart/>
                 </div>
             </div>
         </div>
