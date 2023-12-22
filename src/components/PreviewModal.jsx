@@ -9,7 +9,7 @@ import Counter from "./Counter";
 import MagnifyingImage from "./MagnifyingImage";
 
 
-const PreviewModal = ({openModal, setOpenModal , data}) => {
+const PreviewModal = ({openModal, setOpenModal , data, setCartedModal, setCartedProduct}) => {
     const [product, setProduct] = useState({...data});
     const [index, setIndex] = useState(0);
     const [cart, setCart] = useContext(CartContext);
@@ -27,8 +27,8 @@ const PreviewModal = ({openModal, setOpenModal , data}) => {
             setProduct(products.find((item)=>item.id === 1));
         }
     }
+    
     const handlePrevData = (id)=>{
-
         if(id > 1){
             setProduct(products.find((item)=>item.id === id-1))
         } else{
@@ -43,8 +43,10 @@ const PreviewModal = ({openModal, setOpenModal , data}) => {
             size: size,
             quantity: quantity
         }
-
+        setCartedProduct(productToCart);
         setCart([...cart, productToCart]);
+        setCartedModal(true);
+        setOpenModal(false);
     };
 
     return (

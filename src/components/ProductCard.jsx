@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import { FaRegEye, FaRegHeart } from "react-icons/fa";
 import { FaCodeCompare } from "react-icons/fa6";
+import CartModal from './CartModal';
 import PreviewModal from './PreviewModal';
 
 
 
 const ProductCard = ({product}) => {
     const [openModal, setOpenModal] = useState(false);
+    const [cartedModal, setCartedModal] = useState(false);
+    const [cartedProduct, setCartedProduct] = useState(null);
+
+
 
 
     return (
@@ -44,7 +49,10 @@ const ProductCard = ({product}) => {
                 <p className='font-normal text-sm text-neutral-400' >{product.seller}</p>
 
             </div>
-            <PreviewModal openModal={openModal} setOpenModal={setOpenModal} data={product}/>  
+            <PreviewModal openModal={openModal} setOpenModal={setOpenModal} data={product} setCartedModal={setCartedModal} setCartedProduct={setCartedProduct}/> 
+            {
+                cartedProduct && <CartModal cartedModal={cartedModal} setCartedModal={setCartedModal} data={cartedProduct}/> 
+            }
         </>
         
     );

@@ -14,10 +14,14 @@ const CartCard = () => {
        return products.find((product)=> item.productId === product.id )
     });
     const totalCartedItem = cart.reduce((sum, item)=> sum + item.quantity, 0);
-    const totalPrice =cartedProducts !== undefined && cart.reduce((sum, item)=> {
-                            const price = cartedProducts.find((product)=>product.id === item.productId).price;
-                            return sum + (item.quantity * price)}, 0)
+
+    const totalPrice = cartedProducts !== undefined && cart.reduce((sum, item)=> {
+                        const price = cartedProducts.find((product)=>product.id === item.productId).price;
+                        return sum + (item.quantity * price)
+                    }, 0);
+
     const shippingFee = totalPrice >= 250 ? 0 : totalPrice === 0 ? 0 : 7.99;
+
     const getColor =(id)=>{
         return cart.find((item)=> item.productId === id).color;
     };
