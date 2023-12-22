@@ -4,13 +4,11 @@ import { FaTimes } from "react-icons/fa";
 import { MdOutlineArrowBackIos, MdOutlineArrowForwardIos } from "react-icons/md";
 import { PiShoppingCartFill } from "react-icons/pi";
 import { CartContext } from "../App";
-import { products } from "../data/products";
 import Counter from "./Counter";
 import MagnifyingImage from "./MagnifyingImage";
 
 
 const PreviewModal = ({openModal, setOpenModal , data, setCartedModal, setCartedProduct}) => {
-    const [product, setProduct] = useState({...data});
     const [index, setIndex] = useState(0);
     const [cart, setCart] = useContext(CartContext);
     const [color, setColor] = useState('Yellow');
@@ -20,21 +18,26 @@ const PreviewModal = ({openModal, setOpenModal , data, setCartedModal, setCarted
 
 
 
-    const handleNextData = (id)=>{
-        if(id < products.length){
-            setProduct(products.find((item)=>item.id === id+1));
-        } else{
-            setProduct(products.find((item)=>item.id === 1));
-        }
-    }
+
+
+
+
+    // const handleNextData = (id)=>{
+    //     if(id < products.length){
+    //         setData(products.find((item)=>item.id === id+1));
+    //     } else{
+    //         setData(products.find((item)=>item.id === 1));
+    //     }
+    //     console.log(id)
+    // }
     
-    const handlePrevData = (id)=>{
-        if(id > 1){
-            setProduct(products.find((item)=>item.id === id-1))
-        } else{
-            setProduct(products.find((item)=> item.id === products.length))
-        }
-    };
+    // const handlePrevData = (id)=>{
+    //     if(id > 1){
+    //         setData(products.find((item)=>item.id === id-1))
+    //     } else{
+    //         setData(products.find((item)=> item.id === products.length))
+    //     }
+    // };
 
     const handleAddToCart = (id)=>{
         const productToCart = {
@@ -50,9 +53,9 @@ const PreviewModal = ({openModal, setOpenModal , data, setCartedModal, setCarted
     };
 
     return (
-            <Dialog open={openModal} onClose={() => setOpenModal(false)} className="fixed inset-0 z-10 overflow-y-auto">
+            <Dialog open={openModal} onClose={() => setOpenModal(false)} className="fixed inset-0 z-10 ">
                 <div className="flex items-center justify-center min-h-screen px-4 py-8 border-2 border-green-300">
-                    <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
+                    <Dialog.Overlay className="fixed inset-0 bg-sky-600 opacity-30" />
                     <div className="relative lg:w-7/12 md:w-9/12 w-10/12  p-4 mx-auto bg-white rounded-md shadow-lg border-2 border-red-600 flex items-center justify-center">                    
                         <button
                             className="absolute top-2 right-2 p-2 text-gray-800 rounded-full outline-none hover:bg-gray-200 hover:outline-dashed outline-1 outline-black"
@@ -62,19 +65,19 @@ const PreviewModal = ({openModal, setOpenModal , data, setCartedModal, setCarted
                         </button>
 
                         {/* Modal data controller buttons */}
-                        <div className="absolute w-full flex items-center justify-between">
-                            <button className="relative -translate-x-10 bg-white/70 text-2xl font-bold duration-300 hover:bg-white py-5 px-1" onClick={()=>handlePrevData(product.id)}>
+                        {/* <div className="absolute w-full flex items-center justify-between">
+                            <button className="relative -translate-x-10 bg-white/70 text-2xl font-bold duration-300 hover:bg-white py-5 px-1" onClick={()=>handlePrevData(data.id)}>
                                 <MdOutlineArrowBackIos />
                             </button>
-                            <button className="relative translate-x-10 bg-white/70 text-2xl font-bold duration-300 hover:bg-white py-5 px-1" onClick={()=>handleNextData(product.id)}>
+                            <button className="relative translate-x-10 bg-white/70 text-2xl font-bold duration-300 hover:bg-white py-5 px-1" onClick={()=>handleNextData(data.id)}>
                                 <MdOutlineArrowForwardIos />
                             </button>
-                        </div>
+                        </div> */}
 
                         {/* Main modal content */}
                         <div className="border-2 border-green-500 relative mt-5 flex  items-center w-full space-x-1">
-                            <div className="border border-neutral-600 w-full relative flex-1 flex items-center justify-center overflow-hidden" >
-                                <MagnifyingImage data={product.images[index]}/>
+                            <div className="border border-neutral-600 w-full relative flex-1 flex items-center justify-center" >
+                                <MagnifyingImage data={data?.images[index]}/>
                                 {/* image carousel controller */}
                                 <div className="w-full  absolute flex items-center justify-between">
                                     <button className={`relative  bg-black/10 text-2xl font-bold duration-300 hover:bg-black/50 hover:text-white py-5 px-1 ${index > 0 ? "opacity-100" : "opacity-30"}`} onClick={()=>index > 0 && setIndex(index-1)}>
@@ -87,8 +90,8 @@ const PreviewModal = ({openModal, setOpenModal , data, setCartedModal, setCarted
                             </div>
 
                             <div className="flex-1 h-full flex flex-col items-center">
-                                <h2 className="text-2xl font-bold text-textal">{product.title}</h2>
-                                <p className="text-xl font-bold text-elemental">${product.price}</p>
+                                <h2 className="text-2xl font-bold text-textal">{data.title}</h2>
+                                <p className="text-xl font-bold text-elemental">${data.price}</p>
 
                                 <div className="flex flex-col items-center mt-3">
                                     <p className="text-sm font-bold text-textal my-2">Size</p>
@@ -108,8 +111,8 @@ const PreviewModal = ({openModal, setOpenModal , data, setCartedModal, setCarted
                                 </div>
 
                                 <div className="flex items-center mt-5 space-x-3">
-                                    <Counter id={product.id} newProduct setQuantity={setQuantity}/>
-                                    <button className="bg-enfanato text-white h-10 px-3 hover:outline-dashed outline-1 outline-black text-sm flex items-center space-x-2" onClick={()=>handleAddToCart(product.id)}>
+                                    <Counter id={data.id} newProduct setQuantity={setQuantity}/>
+                                    <button className="bg-enfanato text-white h-10 px-3 hover:outline-dashed outline-1 outline-black text-sm flex items-center space-x-2" onClick={()=>handleAddToCart(data.id)}>
                                         <PiShoppingCartFill />
                                         Add to cart
                                     </button>

@@ -15,12 +15,12 @@ const CartModal = ({cartedModal, setCartedModal, data}) => {
     const totalPrice = cart.reduce((sum, item)=>{
         const price = products.find((product)=> product.id === item.productId).price;
         return sum + (item.quantity * price)
-    }, 0)
+    }, 0);
 
     return (
         <Dialog open={cartedModal} onClose={()=> setCartedModal(false)} className="fixed inset-0 z-10 overflow-y-auto">
             <div className='flex items-center justify-center min-h-screen px-4 py-8 '>
-                <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
+                <Dialog.Overlay className="fixed inset-0 bg-sky-600 opacity-30" />
                 <div className='outline-dashed outline-enfanato lg:w-7/12 md:w-9/12 w-10/12  mx-auto shadow-lg bg-white relative rounded-md'>
                     <button
                         className="absolute top-3 right-3 p-2 text-gray-800 rounded-full outline-none hover:bg-gray-200 hover:outline-dashed outline-1 outline-black"
@@ -66,7 +66,7 @@ const CartModal = ({cartedModal, setCartedModal, data}) => {
                                 <Link to="/cart" className='w-full flex items-center justify-center bg-enfanato text-white h-10 hover:outline-dashed outline-1 outline-black'>Proceed to checkout</Link>
                             </div>
 
-                            <Link to='/' className='flex w-full items-center justify-center text-enfanato mt-3 duration-300 h-10 outline outline-1 outline-enfanato hover:bg-enfanato hover:text-white'>
+                            <Link to='/' className='flex w-full items-center justify-center text-enfanato mt-3 duration-300 h-10 outline outline-1 outline-enfanato hover:bg-enfanato hover:text-white' onClick={()=> setCartedModal(false)}>
                                 Continue Shopping
                             </Link>
                         </div>

@@ -19,7 +19,6 @@ const HeroSlider = () => {
 
         const prevText = useCallback(() => {
             setIndex((index - 1 + texts.length) % texts.length);
-            console.log(index)
         }, [index, texts]);
 
 
