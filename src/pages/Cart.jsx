@@ -1,6 +1,9 @@
 import React from 'react';
+import { IoIosArrowBack } from "react-icons/io";
+import { Link } from 'react-router-dom';
 import CartTable from '../components/CartTable';
 import CheckoutCard from '../components/CheckoutCard';
+
 
 const Cart = () => {
     return (
@@ -16,6 +19,11 @@ const Cart = () => {
                     <CheckoutCard inCart/>
                 </div>
             </div>
+
+            <Link to='/' className='flex items-center justify-center text-white bg-enfanato mt-5 h-10 max-w-[200px] hover:outline-dashed outline-1 outline-black'>
+                <IoIosArrowBack />
+                <span>Continue Shopping</span>
+            </Link>
         </div>
     );
 };

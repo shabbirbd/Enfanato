@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react"
+import { createContext, useState } from "react"
 import { Route, Routes } from "react-router-dom"
 import Footer from "./components/Footer"
 import Topbar from "./components/Topbar"
@@ -12,25 +12,13 @@ import Signup from "./pages/Signup"
 
 
 export const CartContext = createContext();
-const cartItem = [
-  {
-    productId: 1,
-    quantity: 2
-  },
-  {
-    productId: 3,
-    quantity: 3
-  }
-];
+
 
 function App() {
-  const [cart, setCart] = useState(['hello']);
+  const [cart, setCart] = useState([]);
 
   
 
-  useEffect(()=>{
-    setCart(cartItem)
-  }, [cartItem])
 
 
   return (

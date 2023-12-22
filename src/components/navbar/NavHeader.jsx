@@ -15,7 +15,7 @@ const NavHeader = ({setOpen}) => {
     const [cart, setCart] = useContext(CartContext);
     const cartCardRef = useRef(null);
     const cartIconRef = useRef(null);
-    const totalCartedQuantity = JSON.stringify(cart.reduce((sum, item)=> sum + item.quantity, 0));
+    const totalCartedQuantity = cart.length > 0 && JSON.stringify(cart.reduce((sum, item)=> sum + item.quantity, 0)) || 0;
     
 
 

@@ -18,6 +18,13 @@ const CartCard = () => {
                             const price = cartedProducts.find((product)=>product.id === item.productId).price;
                             return sum + (item.quantity * price)}, 0)
     const shippingFee = totalPrice >= 250 ? 0 : totalPrice === 0 ? 0 : 7.99;
+    const getColor =(id)=>{
+        return cart.find((item)=> item.productId === id).color;
+    };
+    const getSize = (id)=>{
+        return cart.find((item)=> item.productId === id).size;
+    }
+
                         
 
             
@@ -37,8 +44,8 @@ const CartCard = () => {
                             <img src={item.images[0]} alt="item" className='w-16 object-cover' />
                             <div className='flex-1  flex flex-col'>
                                 <p className='text-md text-textal'>{item.title}</p>
-                                <span className='text-[12px] text-textal'>Size: s</span>
-                                <span className='text-[12px] text-textal'>Color: Yellow</span>
+                                <span className='text-[12px] text-textal'>Size: {getSize(item.id)}</span>
+                                <span className='text-[12px] text-textal'>Color: {getColor(item.id)}</span>
                                 <div className='flex items-center mt-2 justify-between'>
                                     <Counter id={item.id} />
                                     <p className='ml-2 flex items-center text-[12px] text-textal'>

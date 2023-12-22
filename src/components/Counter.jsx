@@ -3,9 +3,9 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { CartContext } from '../App';
 
 
-const Counter = ({id , newProduct}) => {
+const Counter = ({id , newProduct, setQuantity}) => {
     const [cart, setCart] = useContext(CartContext);
-    const initialCount = cart.find((ietm)=> ietm.productId === id)?.quantity || 1;
+    const initialCount =cart.length > 0 && cart.find((ietm)=> ietm.productId === id)?.quantity || 1;
     const [count, setCount] = useState(initialCount);
 
 
@@ -24,7 +24,8 @@ const Counter = ({id , newProduct}) => {
                 }
                 return newP;
             });
-            setCart(updatedCart)
+            setCart(updatedCart);
+            setQuantity && setQuantity(count);
         }, [count, id])
     }
 
