@@ -54,9 +54,9 @@ const PreviewModal = ({openModal, setOpenModal , data, setCartedModal, setCarted
 
     return (
             <Dialog open={openModal} onClose={() => setOpenModal(false)} className="fixed inset-0 z-10 ">
-                <div className="flex items-center justify-center min-h-screen px-4 py-8 border-2 border-green-300">
+                <div className="flex items-center justify-center min-h-screen px-4 py-8 ">
                     <Dialog.Overlay className="fixed inset-0 bg-sky-600 opacity-30" />
-                    <div className="relative lg:w-7/12 md:w-9/12 w-10/12  p-4 mx-auto bg-white rounded-md shadow-lg border-2 border-red-600 flex items-center justify-center">                    
+                    <div className="relative lg:w-7/12 md:w-9/12 w-10/12  p-4 mx-auto bg-white rounded-md shadow-lg  flex items-center justify-center">                    
                         <button
                             className="absolute top-2 right-2 p-2 text-gray-800 rounded-full outline-none hover:bg-gray-200 hover:outline-dashed outline-1 outline-black"
                             onClick={() => setOpenModal(false)}
@@ -75,8 +75,8 @@ const PreviewModal = ({openModal, setOpenModal , data, setCartedModal, setCarted
                         </div> */}
 
                         {/* Main modal content */}
-                        <div className="border-2 border-green-500 relative mt-5 flex  items-center w-full space-x-1">
-                            <div className="border border-neutral-600 w-full relative flex-1 flex items-center justify-center" >
+                        <div className="relative mt-5 flex  items-center w-full space-x-1">
+                            <div className="w-full relative flex-1 flex items-center justify-center" >
                                 <MagnifyingImage data={data?.images[index]}/>
                                 {/* image carousel controller */}
                                 <div className="w-full  absolute flex items-center justify-between">
@@ -95,7 +95,7 @@ const PreviewModal = ({openModal, setOpenModal , data, setCartedModal, setCarted
 
                                 <div className="flex flex-col items-center mt-3">
                                     <p className="text-sm font-bold text-textal my-2">Size</p>
-                                    <select name="size" className="outline-dashed outline-1 outline-enfanato p-2" onChange={(e)=> setSize(e.target.value)}>
+                                    <select name="size" className="outline-dashed outline-1 outline-enfanato cursor-pointer p-2" onChange={(e)=> setSize(e.target.value)}>
                                         <option value="s">s</option>
                                         <option value="m">m</option>
                                         <option value="l">l</option>
