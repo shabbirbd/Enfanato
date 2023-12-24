@@ -18,11 +18,12 @@ const ProductPreview = () => {
     const [cartedProduct, setCartedProduct] = useState(null);
     const [option , setOption] = useState('description');
     const [reviewModal, setReviewModal] = useState(false);
+    const [review, setReview] = useState(false);
 
 
     return (
-        <div className='border-2 border-green-400'>
-            <div className='border-2 border-red-300 w-full flex items-center justify-between p-3'>
+        <div className=''>
+            <div className='w-full flex items-center justify-between p-3'>
                 <p className='text-sm font-normal text-neutral-300'>Home / product / {product?.id}</p>
                 
                 <div className='flex items-center space-x-3 text-textal'>
@@ -31,12 +32,12 @@ const ProductPreview = () => {
                 </div>
             </div>
 
-            <div className='border-2 border-sky-500 mt-10 flex items-center spare-x-2   '>
+            <div className='mt-10 flex items-center spare-x-2   '>
                 <PreviewImgCarousel data={product}/>
                 <ProductDetail data={product} setCartedModal={setCartedModal} setCartedProduct={setCartedProduct} />
             </div>
 
-            <div className='border-2 border-sky-600 mt-5'>
+            <div className='mt-5'>
                 <div className='w-full  flex items-center justify-center space-x-5'>
                     <button className={`font-bold  hover:text-textal ${option === 'description' ? "text-textal": 'text-textal/50'} duration-300 text-lg group`} onClick={()=> setOption('description')}>
                         Description
@@ -48,12 +49,17 @@ const ProductPreview = () => {
                     </button>
                 </div>
 
-                <div className='mt-5 border-2 border-sky-300 p-5'>
+                <div className='mt-5 p-5'>
                     {
                         option === 'description' ? 
                         <p className='text-sm text-textal'>Fashion has been creating well-designed collections since 2010. The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!</p> :
-                        <div className='flex items-center justify-between'>
-                            <p>No reviews</p>
+                        <div className='flex items-center space-x-5 justify-between'>
+                            {
+                                !review ? <p>No reviews</p> :
+                                <div className='bg-[#95B9E5] text-white w-full p-3 rounded-md'>
+                                    <p>Review added</p>
+                                </div>
+                            }
                             <button className='flex items-center space-x-1 bg-enfanato h-10 px-3 hover:outline-dashed outline-1 outline-black text-white' onClick={()=> setReviewModal(true)}>
                                 <MdOutlineRateReview />
                                 <span>Write review</span>
@@ -67,7 +73,7 @@ const ProductPreview = () => {
                     cartedProduct && <CartModal cartedModal={cartedModal} setCartedModal={setCartedModal} data={cartedProduct}/> 
                 }
 
-                <ReviewModal reviewModal={reviewModal} setReviewModal={setReviewModal}/>
+                <ReviewModal reviewModal={reviewModal} setReviewModal={setReviewModal} setReview={setReview}/>
         </div>
     );
 };
