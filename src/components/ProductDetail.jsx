@@ -1,7 +1,11 @@
 import React, { useContext, useState } from 'react';
+import { FaRegHeart } from "react-icons/fa";
+import { FaCodeCompare } from 'react-icons/fa6';
 import { PiShoppingCartFill } from 'react-icons/pi';
 import { CartContext } from '../App';
 import Counter from './Counter';
+import Tooltip from './Tooltip';
+
 
 const ProductDetail = ({data, setCartedProduct, setCartedModal, setOpenModal}) => {
     const [cart, setCart] = useContext(CartContext);
@@ -48,6 +52,15 @@ const ProductDetail = ({data, setCartedProduct, setCartedModal, setOpenModal}) =
                 <button className="bg-enfanato text-white h-10 px-3 hover:outline-dashed outline-1 outline-black text-sm flex items-center space-x-2" onClick={()=>handleAddToCart(data.id)}>
                     <PiShoppingCartFill />
                     Add to cart
+                </button>
+
+                <button className='flex items-center justify-center h-10 w-10 outline-dashed outline-1 outline-enfanato text-enfanato hover:text-white hover:bg-enfanato duration-300 group/tooltip relative'>
+                    <Tooltip up>Add to whitelist</Tooltip>
+                    <FaRegHeart />
+                </button>
+                <button className='flex items-center justify-center h-10 w-10 outline-dashed outline-1 outline-enfanato text-enfanato hover:text-white hover:bg-enfanato duration-300 group/tooltip relative'>
+                    <Tooltip up>Compare</Tooltip>
+                    <FaCodeCompare />   
                 </button>
             </div>
         </div>

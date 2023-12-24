@@ -1,6 +1,7 @@
 import { createContext, useState } from "react"
 import { Route, Routes } from "react-router-dom"
 import Footer from "./components/Footer"
+import ProductPreview from "./components/ProductPreview"
 import Topbar from "./components/Topbar"
 import Navbar from "./components/navbar/Navbar"
 import Cart from "./pages/Cart"
@@ -36,6 +37,7 @@ function App() {
                 <Route path="/password-recovery" element={<ForgotPassword/>} />
                 <Route path="/cart" element={<Cart/>} />
                 <Route path="/checkout" element={<Checkout/>} />
+                <Route path="/product/:id" element={<ProductPreview/>} />
               </Routes>
             </div>
 
