@@ -21,9 +21,13 @@ const ProductDetail = ({data, setCartedProduct, setCartedModal, setOpenModal}) =
             quantity: quantity
         }
         setCartedProduct(productToCart);
-        setCart([...cart, productToCart]);
+        if(cart.find((item)=> item.productId === id)){
+            setCart([...cart])
+        } else {
+            setCart([...cart, productToCart]);
+        }
         setCartedModal(true);
-        setOpenModal(false);
+        setOpenModal && setOpenModal(false);
     };
     return (
         <div className="flex-1 h-full flex flex-col items-center">

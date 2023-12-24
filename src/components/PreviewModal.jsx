@@ -51,7 +51,7 @@ const PreviewModal = ({openModal, setOpenModal , data, setCartedModal, setCarted
                         </div> */}
 
                         {/* Main modal content */}
-                        <div className="relative mt-5 flex  items-center w-full space-x-1">
+                        <div className="mt-5 flex  items-center w-full space-x-1">
                             <PreviewImgCarousel data={data}/>
 
                             <ProductDetail data={data} setCartedModal={setCartedModal} setCartedProduct={setCartedProduct} setOpenModal={setOpenModal}/>
