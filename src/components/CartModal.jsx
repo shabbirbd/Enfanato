@@ -18,7 +18,7 @@ const CartModal = ({cartedModal, setCartedModal, data}) => {
     }, 0);
 
     return (
-        <Dialog open={cartedModal} onClose={()=> setCartedModal(false)} className="fixed inset-0 z-10 overflow-y-auto">
+        <Dialog open={cartedModal} onClose={()=> setCartedModal(false)} className="fixed inset-0 z-50">
             <div className='flex items-center justify-center min-h-screen px-4 py-8 '>
                 <Dialog.Overlay className="fixed inset-0 bg-sky-600 opacity-30" />
                 <div className='outline-dashed outline-enfanato lg:w-7/12 md:w-9/12 w-10/12  mx-auto shadow-lg bg-white relative rounded-md'>
