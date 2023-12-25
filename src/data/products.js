@@ -8,7 +8,7 @@ import handtoy2 from '../assets/handtoy2.png';
 export const products =[
     {
         id:1,
-        title: "Some Title",
+        title: "Smile lab",
         price: "60.50",
         images: [babycart1, babycart2],
         seller: "Seller",
@@ -16,7 +16,7 @@ export const products =[
     },
     {
         id:2,
-        title: "Some Title",
+        title: "Robot puppy",
         price: "30.50",
         images: [barbie1, barbie2],
         seller: "Seller",
@@ -24,7 +24,7 @@ export const products =[
     },
     {
         id:3,
-        title: "Some Title",
+        title: "Magic wand",
         price: "20.50",
         images: [babycart2, babycart1],
         seller: "Seller",
@@ -32,7 +32,7 @@ export const products =[
     },
     {
         id:4,
-        title: "Some Title",
+        title: "Doodle mat",
         price: "40.50",
         images: [barbie2, barbie1],
         seller: "Seller",
@@ -40,7 +40,7 @@ export const products =[
     },
     {
         id:5,
-        title: "Some Title",
+        title: "Spy gear",
         price: "70.50",
         images: [handtoy1, handtoy2],
         seller: "Seller",
@@ -48,7 +48,7 @@ export const products =[
     },
     {
         id:6,
-        title: "Some Title",
+        title: "Bouncy castle",
         price: "10.50",
         images: [handtoy2, handtoy1],
         seller: "Seller",
@@ -56,14 +56,14 @@ export const products =[
     },
     {
         id:7,
-        title: "Some Title",
+        title: "Lego friends",
         price: "20.50",
         images: [babycart1, babycart2],
         seller: "Seller",
         category: "best"
     },
     {   id: 8,
-        title: "Some Title",
+        title: "Puzzle cube",
         price: "50.50",
         images: [barbie1, barbie2],
         seller: "Seller",
@@ -71,14 +71,14 @@ export const products =[
     },
     {
         id:9,
-        title: "Some Title",
+        title: "Karaoke microphone",
         price: "60.50",
         images: [barbie2, barbie1],
         seller: "Seller",
         category: "new"
     },
     {   id: 10,
-        title: "Some Title",
+        title: "Stomp rocket",
         price: "70.50",
         images: [babycart1, babycart2],
         seller: "Seller",
@@ -86,7 +86,7 @@ export const products =[
     },
     {
         id:11,
-        title: "Some Title",
+        title: "Fidget spinner",
         price: "20.50",
         images: [babycart1, babycart2],
         seller: "Seller",
@@ -94,7 +94,7 @@ export const products =[
     },
     {
         id:12,
-        title: "Some Title",
+        title: "Plush unicorn",
         price: "20.50",
         images: [babycart1, babycart2],
         seller: "Seller",
@@ -102,7 +102,7 @@ export const products =[
     },
     {
         id:13,
-        title: "Some Title",
+        title: "Water balloons",
         price: "20.50",
         images: [babycart1, babycart2],
         seller: "Seller",
@@ -118,7 +118,7 @@ export const products =[
     },
     {
         id:15,
-        title: "Some Title",
+        title: "Kinetic sand",
         price: "20.50",
         images: [babycart1, babycart2],
         seller: "Seller",
@@ -126,7 +126,7 @@ export const products =[
     },
     {
         id:16,
-        title: "Some Title",
+        title: "Bubble machine",
         price: "20.50",
         images: [babycart1, babycart2],
         seller: "Seller",
@@ -134,7 +134,7 @@ export const products =[
     },
     {
         id:17,
-        title: "Some Title",
+        title: "Dress up",
         price: "20.50",
         images: [babycart1, babycart2],
         seller: "Seller",
@@ -142,7 +142,7 @@ export const products =[
     },
     {
         id:18,
-        title: "Some Title",
+        title: "Murble run",
         price: "20.50",
         images: [babycart1, babycart2],
         seller: "Seller",
@@ -150,7 +150,7 @@ export const products =[
     },
     {
         id:19,
-        title: "Some Title",
+        title: "Remote control car",
         price: "20.50",
         images: [babycart1, babycart2],
         seller: "Seller",
@@ -158,7 +158,7 @@ export const products =[
     },
     {
         id:20,
-        title: "Some Title",
+        title: "Play doh",
         price: "20.50",
         images: [babycart1, babycart2],
         seller: "Seller",
