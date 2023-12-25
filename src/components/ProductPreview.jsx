@@ -7,6 +7,7 @@ import CartModal from './CartModal';
 import PreviewImgCarousel from './PreviewImgCarousel';
 import ProductDetail from './ProductDetail';
 import ReviewModal from './ReviewModal';
+import Reviews from './Reviews';
 
 
 
@@ -67,6 +68,8 @@ const ProductPreview = () => {
                         </div>
                     }
                 </div>
+
+                <Reviews/>
             </div>
 
                 {

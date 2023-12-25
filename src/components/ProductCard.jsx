@@ -4,6 +4,7 @@ import { FaCodeCompare } from "react-icons/fa6";
 import { useNavigate } from 'react-router-dom';
 import CartModal from './CartModal';
 import PreviewModal from './PreviewModal';
+import SigninModal from './SigninModal';
 import Tooltip from './Tooltip';
 
 
@@ -12,6 +13,7 @@ import Tooltip from './Tooltip';
         const [openModal, setOpenModal] = useState(false);
         const [cartedModal, setCartedModal] = useState(false);
         const [cartedProduct, setCartedProduct] = useState(null);
+        const [signinModal, setSigninModal] = useState(false);
 
         const navigate = useNavigate();
 
@@ -31,7 +33,7 @@ import Tooltip from './Tooltip';
                         </div>
 
                         <div className=' absolute duration-300 right-2 group-hover:-translate-x-0 -translate-x-[-200%] top-3 flex flex-col space-y-2 font-normal text-sm'>
-                            <button className='h-8 w-8 rounded-full text-white hover:bg-enfanato/70 duration-300 bg-enfanato flex items-center justify-center group/tooltip'>
+                            <button className='h-8 w-8 rounded-full text-white hover:bg-enfanato/70 duration-300 bg-enfanato flex items-center justify-center group/tooltip' onClick={()=> setSigninModal(true)}>
                                 <Tooltip>Add to whitelist</Tooltip>
                                 <FaRegHeart />
                             </button>
@@ -55,6 +57,7 @@ import Tooltip from './Tooltip';
 
                 </div>
                 <PreviewModal openModal={openModal} setOpenModal={setOpenModal} data={product}  setCartedModal={setCartedModal} setCartedProduct={setCartedProduct}/> 
+                <SigninModal signinModal={signinModal} setSigninModal={setSigninModal}/>
                 {
                     cartedProduct && <CartModal cartedModal={cartedModal} setCartedModal={setCartedModal} data={cartedProduct}/> 
                 }
