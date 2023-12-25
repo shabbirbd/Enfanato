@@ -1,9 +1,11 @@
 import React, { useContext, useState } from 'react';
+import toast from 'react-hot-toast';
 import { FaRegHeart } from "react-icons/fa";
 import { FaCodeCompare } from 'react-icons/fa6';
 import { PiShoppingCartFill } from 'react-icons/pi';
-import { CartContext } from '../App';
+import { CartContext, CopmareContext } from '../App';
 import Counter from './Counter';
+import SigninModal from './SigninModal';
 import Tooltip from './Tooltip';
 
 
@@ -12,6 +14,8 @@ const ProductDetail = ({data, setCartedProduct, setCartedModal, setOpenModal}) =
     const [color, setColor] = useState('Yellow');
     const [size, setSize] = useState('s');
     const [quantity, setQuantity] = useState(1);
+    const [signinModal, setSigninModal] = useState(false);
+    const [compare, setCompare] = useContext(CopmareContext);
 
     const handleAddToCart = (id)=>{
         const productToCart = {
@@ -23,12 +27,27 @@ const ProductDetail = ({data, setCartedProduct, setCartedModal, setOpenModal}) =
         setCartedProduct(productToCart);
         if(cart.find((item)=> item.productId === id)){
             setCart([...cart])
+            toast("Product already in cart");
         } else {
             setCart([...cart, productToCart]);
+            toast("Product added to cart")
         }
         setCartedModal(true);
         setOpenModal && setOpenModal(false);
     };
+    const handleCompare = (id)=>{
+        const alreadyAdded = compare.find((item)=> item === id);
+        if(alreadyAdded){
+            toast('Product already added')
+        } else {
+            setCompare([...compare, id])
+            toast('Product added to compare')
+        }
+    };
+
+    const handleSigninModal = ()=>{
+        setSigninModal(true);
+    }
     return (
         <div className="flex-1 h-full flex flex-col items-center">
             <h2 className="text-2xl font-bold text-textal">{data.title}</h2>
@@ -58,15 +77,16 @@ const ProductDetail = ({data, setCartedProduct, setCartedModal, setOpenModal}) =
                     Add to cart
                 </button>
 
-                <button className='flex items-center justify-center h-10 w-10 outline-dashed outline-1 outline-enfanato text-enfanato hover:text-white hover:bg-enfanato duration-300 group/tooltip relative'>
+                <button className='flex items-center justify-center h-10 w-10 outline-dashed outline-1 outline-enfanato text-enfanato hover:text-white hover:bg-enfanato duration-300 group/tooltip relative' onClick={()=> handleSigninModal()}>
                     <Tooltip up>Add to whitelist</Tooltip>
                     <FaRegHeart />
                 </button>
-                <button className='flex items-center justify-center h-10 w-10 outline-dashed outline-1 outline-enfanato text-enfanato hover:text-white hover:bg-enfanato duration-300 group/tooltip relative'>
+                <button className='flex items-center justify-center h-10 w-10 outline-dashed outline-1 outline-enfanato text-enfanato hover:text-white hover:bg-enfanato duration-300 group/tooltip relative' onClick={()=> handleCompare(data.id)}>
                     <Tooltip up>Compare</Tooltip>
                     <FaCodeCompare />   
                 </button>
             </div>
+            <SigninModal signinModal={signinModal} setSigninModal={setSigninModal}/>
         </div>
     );
 };

@@ -10,15 +10,17 @@ const CompareCard = () => {
     });
     const navigate = useNavigate();
 
-    console.log(comparedProducts)
     return (
         <div className='bg-white fixed right-1/4 bottom-0 text-black z-50 py-1 outline-1 outline-dashed outline-enfanato flex items-center px-2 rounded-t-md cursor-pointer' onClick={()=> navigate('/compare')}>
             <p className='text-sm text-textal'>Compare <span>{`(${compare.length})`}</span></p>
             <div className='flex items-center ml-3 space-x-2'>
                 {
-                    comparedProducts?.map((item, i)=> (
+                    comparedProducts?.slice(0, 5).map((item, i)=> (
                         <img src={item.images[0]} alt="img" className='h-5' key={i}/>
                     ))
+                }
+                {
+                    compare.length > 5 && <span className='text-textal font-bold'>...</span>
                 }
             </div>
         </div>

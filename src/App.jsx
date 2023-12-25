@@ -1,4 +1,5 @@
 import { createContext, useState } from "react"
+import { Toaster } from "react-hot-toast"
 import { Route, Routes } from "react-router-dom"
 import CompareCard from "./components/CompareCard"
 import Footer from "./components/Footer"
@@ -32,6 +33,13 @@ function App() {
           {
             compare.length > 0 && <CompareCard/>
           }
+          <Toaster 
+              position="top-right"
+              reverseOrder={false}   
+              toastOptions={{
+                className: 'bg-enfanato text-white outline-1 outline-dashed outline-black',
+              }}   
+          />
           <div className="w-full lg:w-4/5 mx-auto shadow-2xl relative shadow-enfanato">
             <Topbar/>
             <Navbar/>

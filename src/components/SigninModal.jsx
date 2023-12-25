@@ -28,12 +28,12 @@ const SigninModal = ({signinModal, setSigninModal}) => {
                         <p className='text-sm text-textal'>Save products on your wishlist to buy them later or share with your friends.</p>
                         <div className='w-full mt-3 grid grid-cols-2 place-items-center gap-3 px-5'>
                             <p className='text-textal text-md self-center'>Email:</p>
-                            <input type="email"  className='outline-dashed outline-enfanato outline-1 px-2 h-10 w-full' placeholder='Your email'/>
+                            <input type="email"  autoComplete='user-email'  className='outline-dashed outline-enfanato outline-1 px-2 h-10 w-full' placeholder='Your email'/>
                         </div>
                         <div className='w-full mt-3 grid grid-cols-2 place-items-center gap-3 px-5'>
                             <p className='text-textal text-md self-center'>Password:</p>
                             <div className='outline-dashed outline-enfanato outline-1 h-10 w-full flex items-center'>
-                                <input type={show ? "text" : "password"}  className='px-2 h-full outline-none flex-1' placeholder='Your password'/>
+                                <input type={show ? "text" : "password"} autoComplete='current-password'  className='px-2 h-full outline-none flex-1' placeholder='Your password'/>
                                 <button type='button' className='border-l border-dashed border-enfanato h-full w-10 hover:bg-enfanato hover:text-white duration-300 flex items-center justify-center active:bg-neutral-500' onClick={()=> setShow(!show)}>
                                     {
                                         show ? <IoMdEye /> : <IoMdEyeOff />

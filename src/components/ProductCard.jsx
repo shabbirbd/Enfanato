@@ -1,7 +1,9 @@
-    import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import toast from 'react-hot-toast';
 import { FaRegEye, FaRegHeart } from "react-icons/fa";
 import { FaCodeCompare } from "react-icons/fa6";
 import { useNavigate } from 'react-router-dom';
+import { CopmareContext } from '../App';
 import CartModal from './CartModal';
 import PreviewModal from './PreviewModal';
 import SigninModal from './SigninModal';
@@ -14,9 +16,20 @@ import Tooltip from './Tooltip';
         const [cartedModal, setCartedModal] = useState(false);
         const [cartedProduct, setCartedProduct] = useState(null);
         const [signinModal, setSigninModal] = useState(false);
+        const [compare, setCompare] = useContext(CopmareContext);
 
         const navigate = useNavigate();
 
+
+        const handleCompare = (id)=>{
+            const alreadyAdded = compare.find((item)=> item === id);
+            if(alreadyAdded){
+                toast('Product already added')
+            } else {
+                setCompare([...compare, id])
+                toast('Product added to compare')
+            }
+        }
 
 
 
@@ -37,7 +50,7 @@ import Tooltip from './Tooltip';
                                 <Tooltip>Add to whitelist</Tooltip>
                                 <FaRegHeart />
                             </button>
-                            <button className='h-8 w-8 rounded-full text-white hover:bg-enfanato/70 duration-300 bg-enfanato flex items-center justify-center group/tooltip' >
+                            <button className='h-8 w-8 rounded-full text-white hover:bg-enfanato/70 duration-300 bg-enfanato flex items-center justify-center group/tooltip' onClick={()=>handleCompare(product.id)}>
                                 <Tooltip>Compare</Tooltip>
                                 <FaCodeCompare />   
                             </button>
@@ -61,6 +74,7 @@ import Tooltip from './Tooltip';
                 {
                     cartedProduct && <CartModal cartedModal={cartedModal} setCartedModal={setCartedModal} data={cartedProduct}/> 
                 }
+                
             </>
             
         );
