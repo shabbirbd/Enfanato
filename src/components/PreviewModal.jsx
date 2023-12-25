@@ -8,24 +8,6 @@ import ProductDetail from "./ProductDetail";
 const PreviewModal = ({openModal, setOpenModal , data, setCartedModal, setCartedProduct}) => {
     
 
-
-    // const handleNextData = (id)=>{
-    //     if(id < products.length){
-    //         setData(products.find((item)=>item.id === id+1));
-    //     } else{
-    //         setData(products.find((item)=>item.id === 1));
-    //     }
-    //     console.log(id)
-    // }
-    
-    // const handlePrevData = (id)=>{
-    //     if(id > 1){
-    //         setData(products.find((item)=>item.id === id-1))
-    //     } else{
-    //         setData(products.find((item)=> item.id === products.length))
-    //     }
-    // };
-
     
 
     return (
@@ -40,17 +22,6 @@ const PreviewModal = ({openModal, setOpenModal , data, setCartedModal, setCarted
                             <FaTimes />
                         </button>
 
-                        {/* Modal data controller buttons */}
-                        {/* <div className="absolute w-full flex items-center justify-between">
-                            <button className="relative -translate-x-10 bg-white/70 text-2xl font-bold duration-300 hover:bg-white py-5 px-1" onClick={()=>handlePrevData(data.id)}>
-                                <MdOutlineArrowBackIos />
-                            </button>
-                            <button className="relative translate-x-10 bg-white/70 text-2xl font-bold duration-300 hover:bg-white py-5 px-1" onClick={()=>handleNextData(data.id)}>
-                                <MdOutlineArrowForwardIos />
-                            </button>
-                        </div> */}
-
-                        {/* Main modal content */}
                         <div className="mt-5 flex  items-center w-full space-x-1">
                             <PreviewImgCarousel data={data}/>
 

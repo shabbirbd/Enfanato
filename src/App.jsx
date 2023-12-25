@@ -1,6 +1,6 @@
 import { createContext, useState } from "react"
 import { Toaster } from "react-hot-toast"
-import { Route, Routes } from "react-router-dom"
+import { Route, Routes, useLocation } from "react-router-dom"
 import CompareCard from "./components/CompareCard"
 import Footer from "./components/Footer"
 import ProductPreview from "./components/ProductPreview"
@@ -21,7 +21,9 @@ export const CopmareContext = createContext();
 
 function App() {
   const [cart, setCart] = useState([]);
-  const [compare, setCompare] = useState([1,2]);
+  const [compare, setCompare] = useState([]);
+  const location = useLocation();
+
   
 
 
@@ -31,7 +33,7 @@ function App() {
         <CopmareContext.Provider value={[compare, setCompare]}>
         <CartContext.Provider value={[cart, setCart]}>
           {
-            compare.length > 0 && <CompareCard/>
+            compare.length > 0 && location.pathname !== '/compare' && <CompareCard/>
           }
           <Toaster 
               position="top-right"

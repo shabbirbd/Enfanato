@@ -48,8 +48,8 @@ const CartCard = () => {
                             <img src={item.images[0]} alt="item" className='w-16 object-cover' />
                             <div className='flex-1  flex flex-col'>
                                 <p className='text-md text-textal'>{item.title}</p>
-                                <span className='text-[12px] text-textal'>Size: {getSize(item.id)}</span>
-                                <span className='text-[12px] text-textal'>Color: {getColor(item.id)}</span>
+                                <span className='text-[12px] text-textal'>Size: {getSize(item.id) || "s"}</span>
+                                <span className='text-[12px] text-textal'>Color: {getColor(item.id) || "Yellow"}</span>
                                 <div className='flex items-center mt-2 justify-between'>
                                     <Counter id={item.id} />
                                     <p className='ml-2 flex items-center text-[12px] text-textal'>
