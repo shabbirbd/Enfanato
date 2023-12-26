@@ -11,41 +11,41 @@ export const navlinks = [
     {
         title: "Blocks",
         icon: iconblocks,
-        link: "/blocks"
+        link: "/"
     },
     {
         title: "Teddys",
         icon: iconteddy,
-        link: "/teddys"
+        link: "/"
     },
     {
         title: "Fidget Spinners",
         icon: iconspinner,
-        link: "/spinners"
+        link: "/"
     },
     {
         title: "Water Guns",
         icon: icongun,
-        link: "/waterguns"
+        link: "/"
     },
     {
         title: "Robots",
         icon: iconrobot,
-        link: "/robots"
+        link: "/"
     },
     {
         title: "Puzzels",
         icon: iconpuzzel,
-        link: "/puzzels"
+        link: "/"
     },
     {
         title: "Dolls",
         icon: icondoll,
-        link: "/dolls"
+        link: "/"
     },
     {
         title: "Car toys",
         icon: iconcar,
-        link: "/cartoys"
+        link: "/"
     }
 ];
