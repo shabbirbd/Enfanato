@@ -4,6 +4,12 @@ import barbie1 from '../assets/barbie1.png';
 import barbie2 from '../assets/barbie2.png';
 import handtoy1 from '../assets/handtoy1.png';
 import handtoy2 from '../assets/handtoy2.png';
+import lego1 from '../assets/lego1.png';
+import lego2 from '../assets/lego2.png';
+import rocket1 from '../assets/rocket1.png';
+import rocket2 from '../assets/rocket2.png';
+import teddy1 from '../assets/teddy1.png';
+import teddy2 from '../assets/teddy2.png';
 
 export const products =[
     {
@@ -26,7 +32,7 @@ export const products =[
         id:3,
         title: "Magic wand",
         price: "20.50",
-        images: [babycart2, babycart1],
+        images: [teddy1, teddy2],
         seller: "Seller",
         category: "best"
     },
@@ -58,7 +64,7 @@ export const products =[
         id:7,
         title: "Lego friends",
         price: "20.50",
-        images: [babycart1, babycart2],
+        images: [lego1, lego2],
         seller: "Seller",
         category: "best"
     },
@@ -80,7 +86,7 @@ export const products =[
     {   id: 10,
         title: "Stomp rocket",
         price: "70.50",
-        images: [babycart1, babycart2],
+        images: [rocket1, rocket2],
         seller: "Seller",
         category: "new"
     },
