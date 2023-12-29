@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaCalendarAlt, FaRegEye } from "react-icons/fa";
 import { IoPricetags } from "react-icons/io5";
+import { Link } from 'react-router-dom';
 import { blogs } from '../data/blogs';
 
 
@@ -23,9 +24,9 @@ const Blogs = () => {
 
                             <p className='text-sm text-neutral-600 mt-3' >
                                 {item.article} 
-                                <span className='cursor-pointer underline'>
+                                <Link to={`/blog/${item.id}`} className='underline'>
                                     Read more..
-                                </span>
+                                </Link>
                             </p>
 
                             <span className='h-[1px] w-full bg-neutral-300 mt-3 block'></span>

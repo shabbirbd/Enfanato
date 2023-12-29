@@ -6,6 +6,7 @@ import Footer from "./components/Footer"
 import ProductPreview from "./components/ProductPreview"
 import Topbar from "./components/Topbar"
 import Navbar from "./components/navbar/Navbar"
+import Blog from "./pages/Blog"
 import Cart from "./pages/Cart"
 import Checkout from "./pages/Checkout"
 import Compare from "./pages/Compare"
@@ -56,6 +57,7 @@ function App() {
                 <Route path="/checkout" element={<Checkout/>} />
                 <Route path="/product/:id" element={<ProductPreview/>} />
                 <Route path="/compare" element={<Compare/>} />
+                <Route path="/blog/:id" element={<Blog/>} />
               </Routes>
             </div>
 
