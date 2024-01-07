@@ -2,6 +2,7 @@ import React from 'react';
 import { FaEye, FaTag } from 'react-icons/fa6';
 import { IoCalendarOutline } from "react-icons/io5";
 import { Link, useParams } from 'react-router-dom';
+import CommentsFrom from '../components/CommentsFrom';
 import { blogs } from '../data/blogs';
 
 
@@ -57,8 +58,11 @@ const Blog = () => {
 
             <div className='mt-5'>
                 <p className='text-textal font-semibold'>0 comments</p>
-                <div className='h-[2px] w-full bg-neutral-300'/>
             </div>
+
+            <div className='h-[2px] w-full bg-neutral-300 my-2'/>
+                <CommentsFrom/>
+            <div className='w-rull h-[2px] bg-neutral-300 mt-5'/>
         </div>
     );
 };
